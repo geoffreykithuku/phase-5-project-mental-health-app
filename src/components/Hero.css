@@ -177,13 +177,16 @@ section {
   overflow: hidden;
   margin: 0;
   background: #fff;
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  box-shadow: 0 10px 29px 0 rgba(2, 5, 14, 0.1);
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
   text-align: center;
   border-bottom: 3px solid #fff;
 }
 
+.services h2{
+  color: #009cea;
+}
 .services .icon-box:hover {
   transform: translateY(-5px);
 }
@@ -201,13 +204,14 @@ section {
 }
 
 .services .title a {
-  color: #111;
+  color: #009cea;
 }
 
 .services .description {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
+  
 }
 
 .services .icon-box-pink .icon i {

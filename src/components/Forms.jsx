@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./forms.css";
 import Login from "./Login";
 import Signup from "./Signup";
-import apartment from "./assets/images/apartment.jpg";
+
 const Forms = () => {
   const [currentForm, setCurrentForm] = useState("login");
 
@@ -14,7 +14,10 @@ const Forms = () => {
     <>
       <div className="forms">
         <div className="forms-left">
-          <img src={apartment} alt="apartment" />
+          <img
+            src="https://images.pexels.com/photos/4672710/pexels-photo-4672710.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="apartment"
+          />
         </div>
         <div className="forms-right">
           {currentForm === "login" ? (

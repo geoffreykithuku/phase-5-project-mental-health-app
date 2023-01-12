@@ -1,4 +1,3 @@
-
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -65,7 +64,6 @@ h6 {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -108,10 +106,11 @@ color: #29698a;
   transition: 0.5s;
   color: #fff;
   background: #009cea;
+  align-self: center;
 }
 
 #hero .btn-get-started:hover {
-  background: #008bd1;
+  background: #0778b1;
 }
 
 #hero .hero-img {
@@ -168,7 +167,6 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
-
 
 /*--------------------------------------------------------------
 # Services

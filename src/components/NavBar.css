@@ -9,6 +9,7 @@
   top: 0;
   z-index: 20;
   box-shadow: rgb(0 0 0 / 6%) 0px 8px 24px;
+  
 }
 
 .nav-container {
@@ -23,7 +24,7 @@
 .nav-logo {
   color: #4121f5;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 40px;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;

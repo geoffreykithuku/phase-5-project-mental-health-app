@@ -171,7 +171,7 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+.mission .icon-box {
   padding: 30px;
   position: relative;
   overflow: hidden;
@@ -184,64 +184,64 @@ section {
   border-bottom: 3px solid #fff;
 }
 
-.services h2{
+.mission h2{
   color: #009cea;
 }
-.services .icon-box:hover {
+.mission .icon-box:hover {
   transform: translateY(-5px);
 }
 
-.services .icon i {
+.mission .icon i {
   font-size: 48px;
   line-height: 1;
   margin-bottom: 15px;
 }
 
-.services .title {
+.mission .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
-.services .title a {
+.mission .title a {
   color: #009cea;
 }
 
-.services .description {
+.mission .description {
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
   
 }
 
-.services .icon-box-pink .icon i {
+.mission .icon-box-pink .icon i {
   color: #ff689b;
 }
 
-.services .icon-box-pink:hover {
+.mission .icon-box-pink:hover {
   border-color: #ff689b;
 }
 
-.services .icon-box-cyan .icon i {
+.mission .icon-box-cyan .icon i {
   color: #3fcdc7;
 }
 
-.services .icon-box-cyan:hover {
+.mission .icon-box-cyan:hover {
   border-color: #3fcdc7;
 }
 
-.services .icon-box-green .icon i {
+.mission .icon-box-green .icon i {
   color: #41cf2e;
 }
 
-.services .icon-box-green:hover {
+.mission .icon-box-green:hover {
   border-color: #41cf2e;
 }
 
-.services .icon-box-blue .icon i {
+.mission .icon-box-blue .icon i {
   color: #2282ff;
 }
 
-.services .icon-box-blue:hover {
+.mission .icon-box-blue:hover {
   border-color: #2282ff;
 }

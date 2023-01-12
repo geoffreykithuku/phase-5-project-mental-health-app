@@ -52,7 +52,7 @@ const Hero = () => {
         </div>
       </section>
 
-      <section id="services" className="services section-bg">
+      <section id="mission" className="mission section-bg">
         <div className="container">
           <div className="section-title" data-aos="fade-up">
             <h2>Our Promise</h2>

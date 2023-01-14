@@ -118,7 +118,6 @@ function About(){
     font-size; 25px;
     `
     
-    
 
 return (
     <>

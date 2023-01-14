@@ -8,23 +8,25 @@ import UserDoctorCheck from "./components/UserDoctorCheck";
 import EditAppointment from "./components/EditAppointment";
 import CounsellorAppointments from "./components/CounsellorAppointments";
 import CounsellorDashboard from "./components/CounsellorDashboard";
-import NewAppointment from "./components/NewAppointment";
 import UserDashboard from "./components/UserDashboard";
 import Hero from "./components/Hero";
+import PatientForms from "./components/PatientForms";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
       <NavBar />
-      <Hero />
-      <Forms />
-      <ConsellorForms />
-      <UserDashboard />
-       <NewAppointment />
-      <CounsellorDashboard />
-      <CounsellorAppointments />
-      <EditAppointment />
-      <UserDoctorCheck />
+
+      <Routes>
+        <Route path="/" exact element={<Hero />} />
+        <Route path="/check" element={<UserDoctorCheck />} />
+        <Route path="/docforms" element={<ConsellorForms />} />
+        <Route path="/patientforms" element={<PatientForms />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
+
+        <Route path="/counsellordashboard" element={<CounsellorDashboard />} />
+      </Routes>
     </>
   );
 }

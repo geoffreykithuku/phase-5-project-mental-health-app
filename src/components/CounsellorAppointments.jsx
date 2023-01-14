@@ -1,7 +1,7 @@
 import React from "react";
 import "./CounsellorAppointments.css";
 
-const CounsellorAppointments = () => {
+const CounsellorAppointments = ({editAppointment}) => {
   return (
     <div className="ca-container">
       <div className="row m-auto justify-center">
@@ -25,7 +25,9 @@ const CounsellorAppointments = () => {
               <button className="cancel">Reject</button>
               <button className="approve">Approve</button>
 
-              <button className="edit">Complete</button>
+              <button onClick={editAppointment} className="edit">
+                Complete
+              </button>
             </p>
           </div>
         </div>
@@ -48,7 +50,9 @@ const CounsellorAppointments = () => {
               <h5>Status: pending</h5>
               <button className="cancel">Reject</button>
               <button className="approve">Approve</button>
-              <button className="edit">Complete</button>
+              <button onClick={editAppointment} className="edit">
+                Complete
+              </button>
             </p>
           </div>
         </div>
@@ -71,7 +75,9 @@ const CounsellorAppointments = () => {
               <h5>Status: pending</h5>
               <button className="cancel">Reject</button>
               <button className="approve">Approve</button>
-              <button className="edit">Complete</button>
+              <button onClick={editAppointment} className="edit">
+                Complete
+              </button>
             </p>
           </div>
         </div>

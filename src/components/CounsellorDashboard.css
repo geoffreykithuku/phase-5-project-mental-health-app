@@ -1,0 +1,34 @@
+.ud-nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  max-width: 1500px;
+}
+
+.ud-nav-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+.ud-nav-links {
+  color: #4121f5;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  border-bottom: 3px solid transparent;
+}
+
+.ud-nav-item {
+  line-height: 40px;
+  margin-right: 1rem;
+}
+
+
+.ud-nav-item .active {
+  color: #b940ff;
+  border: 1px solid rgb(29, 182, 29);
+}

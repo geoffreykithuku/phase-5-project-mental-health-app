@@ -12,22 +12,23 @@ const Signup = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/signup", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((r) => {
-      if (r.ok) {
-        window.alert("User created successfully");
+    // fetch("/signup", {
+    //   method: "POST",
+    //   body: JSON.stringify(formData),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // }).then((r) => {
+    //   if (r.ok) {
+    //     window.alert("User created successfully");
 
-        navigate("/");
-      } else {
-        window.alert("Something went wrong");
-        r.json().then((err) => console.log(err.errors));
-      }
-    });
+    //     navigate("/userdashboard");
+    //   } else {
+    //     window.alert("Something went wrong");
+    //     r.json().then((err) => console.log(err.errors));
+    //   }
+    // });
+    navigate("/userdashboard");
   }
 
   function handleChange(e) {

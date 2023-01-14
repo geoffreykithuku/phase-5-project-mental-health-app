@@ -49,11 +49,11 @@ function NavBar() {
                 Services
               </NavLink>
             </li>
-           
+
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="check"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}

@@ -1,8 +1,15 @@
-
 import React, { useState } from "react";
-import './UserDoctorCheck.css'
+import { Navigate, useNavigate } from "react-router-dom";
+import "./UserDoctorCheck.css";
 
 const UserDoctorCheck = () => {
+  const navigate = useNavigate()
+  function navUser() {
+    navigate("/patientforms");
+  }
+  function navDoc() {
+    navigate("/docforms");
+  }
 
   return (
     <>
@@ -10,13 +17,17 @@ const UserDoctorCheck = () => {
         <div className="row">
           <h3>Are you a doctor or patient?</h3>
           <div className="button-container">
-            <button className="user">Patient</button>
-            <button className="doctor">Doctor</button>
+            <button onClick={navUser} className="user">
+              Patient
+            </button>
+            <button onClick={navDoc} className="doctor">
+              Doctor
+            </button>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
-export default UserDoctorCheck
+export default UserDoctorCheck;

@@ -1,51 +1,52 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import "./CounsellorDashboard.css";
+import EditAppointment from "./EditAppointment";
+import CounsellorAppointments from "./CounsellorAppointments";
 const CounsellorDashboard = () => {
+  const navigate = useNavigate();
+  const [component, setComponent] = useState("appointments");
   const [click, setClick] = useState(false);
 
-  const handleClick = () => setClick(!click);
+  const editAppointment = () => {
+    setComponent("edit");
+  };
+  const allAppointments = () => {
+    setClick(!click);
+    setComponent("appointments");
+  };
+  const handleLogout = () => {};
   return (
-    <div className="container-fluid">
+    <div className="ud-container-fluid">
       <div className="row">
-        <nav className="navbar">
-          <div className="nav-container">
-            <NavLink exact to="/" className="nav-logo">
-                          Mind<span className="logo1">Ease </span>
-              <i className="fas fa-medkit"></i>
-            </NavLink>
+        <div className="ud-nav-container">
+          <ul className={click ? "ud-nav-menu active" : "ud-nav-menu"}>
+            <li className="ud-nav-item">
+              <NavLink
+                activeClassName="active"
+                className="ud-nav-links"
+                onClick={allAppointments}
+              >
+                Appointments
+              </NavLink>
+            </li>
 
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
-            
-              <li className="nav-item">
-                <NavLink
-                  exact
-                  to="client/appointments"
-                  activeClassName="active"
-                  className="nav-links"
-                  onClick={handleClick}
-                >
-                  Appointments
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  exact
-                  to="client/logout"
-                  activeClassName="active"
-                  className="nav-links"
-                  onClick={handleClick}
-                >
-                  Logout
-                </NavLink>
-              </li>
-            </ul>
-            <div className="nav-icon" onClick={handleClick}>
-              <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
-            </div>
-          </div>
-        </nav>
+            <li className="ud-nav-item">
+              <NavLink
+                activeClassName="active"
+                className="ud-nav-links"
+                onClick={handleLogout}
+              >
+                Logout
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        {component === "appointments" ? (
+          <CounsellorAppointments editAppointment={editAppointment} />
+        ) : (
+          <EditAppointment />
+        )}
       </div>
     </div>
   );

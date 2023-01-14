@@ -28,7 +28,7 @@ const Hero = () => {
                   Our app is designed to help you manage stress, improve your
                   mood, and boost your overall mental health
                 </h2>
-                <a href="#about" className="btn-get-started scrollto">
+                <a href="#" className="btn-get-started scrollto">
                   Get Started
                 </a>
               </div>

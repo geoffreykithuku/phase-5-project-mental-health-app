@@ -1,11 +1,12 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
+import UserAppointments from "./UserAppointments";
 
 const UserDashboard = () => {
-    const [click, setClick] = useState(false);
+  const [click, setClick] = useState(false);
 
-    const handleClick = () => setClick(!click);
+  const handleClick = () => setClick(!click);
   return (
     <div className="container-fluid">
       <div className="row">
@@ -39,7 +40,7 @@ const UserDashboard = () => {
                   Appointments
                 </NavLink>
               </li>
-             
+
               <li className="nav-item">
                 <NavLink
                   exact
@@ -57,9 +58,10 @@ const UserDashboard = () => {
             </div>
           </div>
         </nav>
+        <UserAppointments />
       </div>
     </div>
   );
-}
+};
 
-export default UserDashboard
+export default UserDashboard;

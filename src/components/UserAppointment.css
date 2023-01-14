@@ -1,0 +1,14 @@
+.appointment {
+  background-color: rgb(224, 224, 240);
+  margin: 2rem;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgb(12, 230, 12);
+}
+.cancel{
+    padding: 0 5px;
+    background-color: rgb(71, 236, 20);
+    color: white;
+}

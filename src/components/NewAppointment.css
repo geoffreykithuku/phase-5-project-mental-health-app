@@ -1,10 +1,10 @@
-.container {
+.appoint-container {
   background-color: white;
   justify-content: center;
   align-items: center;
   display: flex;
 }
-.signup-form{
+.appoint-form{
     width: 40%;
     padding: 40px;
     border-radius: 10px;

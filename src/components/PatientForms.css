@@ -1,9 +1,9 @@
 .forms {
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   text-align: center;
   color: white;
- 
   /* min-height: 100vh; */
 }
 .forms-left {
@@ -16,7 +16,7 @@
 }
 .forms-left img {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
 }
 
 .forms-right {
@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   margin: auto;
+  color: #7439db;
 }
 
 label {
@@ -39,20 +40,23 @@ input {
   margin: 0.5rem 0;
   padding: 10px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid  #7439db;
 }
 button {
-  color: #7439db;
+  color: white;
   border: none;
-  background-color: white;
+  background-color: #7439db;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
 }
-
+.signup-form{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .link-btn {
   background: none;
-  color: white;
+  color:  #7439db;
   text-decoration: underline;
 }
 .auth-form-container {
@@ -61,8 +65,7 @@ button {
   border: 1px solid white;
   border-radius: 10px;
   z-index: 2;
-  /* opacity: calc(60%); */
-  background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d);
+ background-color: white
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
@@ -70,7 +73,7 @@ button {
 :root {
   --primary: #118c4f;
 
-  --background: rgba(224,228,253,255);
+  --background: #f5f8ff;
 }
 
 .primary {
@@ -107,7 +110,7 @@ code {
   box-shadow: rgb(0 0 0 / 15%) 0px 8px 24px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .auth-form-container {
     margin: 5%;
     width: 90%;
@@ -123,8 +126,7 @@ code {
     margin: auto;
   }
 }
-
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1200px) {
   .auth-form-container {
     margin: 5%;
     width: 90%;
@@ -134,8 +136,12 @@ code {
     margin: auto;
   }
   .forms-left {
-    display: none;
+    width: 40%;
   }
+  .forms-left img{
+    transform: scale(0.6);
+  }
+  
   .forms-right {
     margin: auto;
   }

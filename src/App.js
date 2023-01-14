@@ -1,26 +1,21 @@
 import "./App.css";
-import CounsellorAppointments from "./components/CounsellorAppointments";
-import CounsellorDashboard from "./components/CounsellorDashboard";
-import EditAppointment from "./components/EditAppointment";
-import Forms from "./components/Forms";
-import Hero from "./components/Hero";
+
+import Forms from "./components/PatientForms";
+
 import NavBar from "./components/NavBar";
-import NewAppointment from "./components/NewAppointment";
-import UserDashboard from "./components/UserDashboard";
-import UserDoctorCheck from "./components/UserDoctorCheck";
 
 function App() {
   return (
     <>
       <NavBar />
        {/* <Hero /> */}
-      {/* <Forms />  */}
+      <Forms /> 
        {/* <UserDashboard />
        <NewAppointment /> 
        <CounsellorDashboard />
       <CounsellorAppointments />
       <EditAppointment />  */}
-      <UserDoctorCheck /> 
+      {/* <UserDoctorCheck />  */}
     </>
   );
 }

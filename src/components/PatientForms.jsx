@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Forms.css";
+import "./PatientForms.css";
 import Login from "./Login";
 import Signup from "./Signup";
 
@@ -15,7 +15,7 @@ const Forms = () => {
       <div className="forms">
         <div className="forms-left">
           <img
-            src="https://images.pexels.com/photos/4672710/pexels-photo-4672710.jpeg?auto=compress&cs=tinysrgb&w=600"
+            src="https://img.freepik.com/free-vector/font-design-talk-mental-health_1308-99574.jpg?size=626&ext=jpg"
             alt="apartment"
           />
         </div>

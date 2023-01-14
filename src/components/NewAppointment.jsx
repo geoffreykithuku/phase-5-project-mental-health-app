@@ -38,8 +38,8 @@ const NewAppointment = () => {
     });
   }
   return (
-    <div className="container">
-      <form className="signup-form" onSubmit={handleSubmit}>
+    <div className="appoint-container">
+      <form className="appoint-form" onSubmit={handleSubmit}>
         <label htmlFor="date">Date</label>
         <input
           onChange={handleChange}

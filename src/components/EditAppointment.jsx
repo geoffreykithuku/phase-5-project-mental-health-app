@@ -39,7 +39,7 @@ const EditAppointment = () => {
   }
   return (
     <div className="container">
-      <form className="signup-form" onSubmit={handleSubmit}>
+      <form className="app-form" onSubmit={handleSubmit}>
         <label htmlFor="date">Date</label>
         <input
           onChange={handleChange}

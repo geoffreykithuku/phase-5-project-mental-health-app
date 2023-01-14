@@ -1,0 +1,22 @@
+.container {
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.signup-form{
+    width: 40%;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(21, 245, 21);
+    color: blueviolet;
+}
+input, textarea{
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+}
+button {
+    background-color: blueviolet;
+    color: white;
+}

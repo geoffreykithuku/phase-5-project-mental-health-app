@@ -3,7 +3,7 @@ import "./UserAppointment.css";
 
 const UserAppointments = () => {
   return (
-    <div>
+    <div className="up">
       <div className="row m-auto justify-center">
         <div
           className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 appointment"

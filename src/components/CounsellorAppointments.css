@@ -1,4 +1,4 @@
-.up .appointment {
+.ca-container .appointment {
   background-color: rgb(224, 224, 240);
   margin: 2rem;
   border-radius: 4px;
@@ -8,20 +8,23 @@
 
   border: 1px solid rgb(12, 230, 12);
 }
-.up .cancel {
+.ca-container .cancel {
   padding: 0 5px;
   background-color: rgb(71, 236, 20);
   color: white;
+  border: 1px solid rgb(12, 230, 12);
 }
-.up .edit {
+.ca-container .edit {
   padding: 0 5px;
   background-color: rgb(87, 53, 238);
   color: white;
   margin-left: 20px;
+  border: 1px solid rgb(12, 230, 12);
 }
-.up .approve {
+.ca-container .approve {
   padding: 0 5px;
   background-color: rgb(171, 158, 231);
   color: white;
   margin-left: 20px;
+  border: 1px solid rgb(12, 230, 12);
 }

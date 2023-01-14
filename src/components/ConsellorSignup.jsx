@@ -6,6 +6,7 @@ const ConsellorSignup = (props) => {
   const [formData, setformData] = useState({
     name: "",
     email: "",
+    specialty: "",
     password: "",
     confirm_password: "",
   });
@@ -59,6 +60,15 @@ const ConsellorSignup = (props) => {
           placeholder="Enter your email"
           id="email"
           value={formData.email}
+        />
+        <label htmlFor="specialty">Specialty</label>
+        <input
+          onChange={handleChange}
+          type="specialty"
+          name="email"
+          placeholder="Enter your specialty"
+          id="specialty"
+          value={formData.specialty}
         />
         <label htmlFor="password">Password</label>
         <input

@@ -21,9 +21,9 @@ const ConsellorForms = () => {
         </div>
         <div className="forms-right">
           {currentForm === "clogin" ? (
-            <Login onFormSwitch={toggleForm} />
+            <ConsellorLogin onFormSwitch={toggleForm} />
           ) : (
-            <Signup onFormSwitch={toggleForm} />
+            <ConsellorSignup onFormSwitch={toggleForm} />
           )}
         </div>
       </div>

@@ -1,23 +1,37 @@
-.container {
+.ea-container {
   background-color: white;
   justify-content: center;
   align-items: center;
   display: flex;
+  width: 100%;
   margin-top: 2rem;
 }
-.app-form{
+.ea-form{
+     box-shadow: rgb(0 0 0 / 50%) 0px 8px 24px;
+     border: 1px solid white;
     width: 40%;
     padding: 40px;
     border-radius: 10px;
-    border: 1px solid rgb(21, 245, 21);
-    color: blueviolet;
+    
+    color: #7439db;
+    display: flex;
+    flex-direction: column;
 }
-input, textarea{
-    border: 1px solid blueviolet;
+.ea-input, .ea-textarea{
+    border: 1px solid #7439db;
     border-radius: 5px;
     padding: 5px;
 }
-button {
-    background-color: blueviolet;
+.ea-button {
+    background-color: #7439db;
     color: white;
+}
+@media screen and (max-width: 650px) {
+    .ea-container{
+        margin: auto;
+    }
+.ea-form{
+    margin: auto;
+    width: 50%;
+}
 }

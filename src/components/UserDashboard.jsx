@@ -8,7 +8,7 @@ const UserDashboard = () => {
 
   const handleClick = () => setClick(!click);
   return (
-    <div className="container-fluid">
+    <div className="ud-container-fluid">
       <div className="row">
         <nav className="navbar">
           <div className="nav-container">

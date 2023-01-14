@@ -42,6 +42,7 @@ const NewAppointment = () => {
       <form className="appoint-form" onSubmit={handleSubmit}>
         <label htmlFor="date">Date</label>
         <input
+          className="ap-input"
           onChange={handleChange}
           type="date"
           name="date"
@@ -51,6 +52,7 @@ const NewAppointment = () => {
         />
         <label htmlFor="time">Time</label>
         <input
+          className="ap-input"
           onChange={handleChange}
           type="time"
           name="time"
@@ -60,6 +62,7 @@ const NewAppointment = () => {
         />
         <label htmlFor="issue">Issue</label>
         <textarea
+          className="ap-textarea"
           onChange={handleChange}
           value={formData.issue}
           type="text"
@@ -68,7 +71,7 @@ const NewAppointment = () => {
           id="issue"
         />
         <br />
-        <button>Book</button>
+        <button className="ap-button">Book</button>
       </form>
     </div>
   );

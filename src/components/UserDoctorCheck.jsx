@@ -6,7 +6,7 @@ const UserDoctorCheck = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="us-container">
         <div className="row">
           <h3>Are you a doctor or patient?</h3>
           <div className="button-container">

@@ -38,10 +38,11 @@ const EditAppointment = () => {
     });
   }
   return (
-    <div className="container">
-      <form className="app-form" onSubmit={handleSubmit}>
+    <div className="ea-container">
+      <form className="ea-form" onSubmit={handleSubmit}>
         <label htmlFor="date">Date</label>
         <input
+          className="ea-input"
           onChange={handleChange}
           type="date"
           name="date"
@@ -51,6 +52,7 @@ const EditAppointment = () => {
         />
         <label htmlFor="time">Time</label>
         <input
+          className="ea-input"
           onChange={handleChange}
           type="time"
           name="time"
@@ -60,6 +62,7 @@ const EditAppointment = () => {
         />
         <label htmlFor="issue">Issue</label>
         <textarea
+          className="ea-textarea"
           onChange={handleChange}
           value={formData.issue}
           type="text"
@@ -69,6 +72,7 @@ const EditAppointment = () => {
         />
         <label htmlFor="status">Status</label>
         <input
+          className="ea-input"
           onChange={handleChange}
           type="status"
           name="status"
@@ -78,15 +82,16 @@ const EditAppointment = () => {
         />
         <label htmlFor="notes">Prescription</label>
         <textarea
+          className="ea-textarea"
           onChange={handleChange}
           type="text"
           name="notes"
           placeholder="Prescription"
           id="status"
           value={formData.status}
-              />
-              <br />
-        <button>Complete Appointment</button>
+        />
+        <br />
+        <button className="ea-button">Complete Appointment</button>
       </form>
     </div>
   );

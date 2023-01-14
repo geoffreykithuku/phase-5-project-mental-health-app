@@ -33,15 +33,11 @@ const Hero = () => {
                 </a>
               </div>
             </div>
+
             <div
               className="col-lg-6 order-1 order-lg-2 hero-img"
               data-aos="fade-left"
             >
-              {/* <img
-              src="https://cdn.vectorstock.com/i/preview-1x/66/05/mental-health-concept-vector-44406605.webp"
-              className="img-fluid"
-              alt=""
-            /> */}
               <img
                 src="https://cdn.vectorstock.com/i/preview-1x/16/84/mental-health-inner-harmony-scene-with-yoga-man-vector-44761684.webp"
                 className="img-fluid"

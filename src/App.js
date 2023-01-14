@@ -1,4 +1,5 @@
 import "./App.css";
+import CounsellorAppointments from "./components/CounsellorAppointments";
 import CounsellorDashboard from "./components/CounsellorDashboard";
 import Forms from "./components/Forms";
 import Hero from "./components/Hero";
@@ -15,6 +16,7 @@ function App() {
       {/* <UserDashboard /> */}
       {/* <NewAppointment /> */}
       <CounsellorDashboard />
+      <CounsellorAppointments />
     </>
   );
 }

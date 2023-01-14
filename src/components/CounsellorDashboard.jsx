@@ -11,7 +11,7 @@ const CounsellorDashboard = () => {
         <nav className="navbar">
           <div className="nav-container">
             <NavLink exact to="/" className="nav-logo">
-              Mind<span className="logo1">Ease </span>
+                          Mind<span className="logo1">Ease </span>
               <i className="fas fa-medkit"></i>
             </NavLink>
 

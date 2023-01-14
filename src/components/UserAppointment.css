@@ -12,3 +12,9 @@
     background-color: rgb(71, 236, 20);
     color: white;
 }
+.edit{
+     padding: 0 5px;
+    background-color: rgb(87, 53, 238);
+    color: white;
+    margin-left: 20px;
+}

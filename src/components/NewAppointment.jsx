@@ -1,43 +1,42 @@
-import React, { useState, useNavigate } from 'react'
-import './NewAppointment.css'
+import React, { useState, useNavigate } from "react";
+import "./NewAppointment.css";
 const NewAppointment = () => {
-    //   const navigate = useNavigate();
-      const [formData, setformData] = useState({
-        name: "",
-        email: "",
-        password: "",
-        confirm_password: "",
-      });
+  //   const navigate = useNavigate();
+  const [formData, setformData] = useState({
+    date: "",
+    time: "",
+    issue: "",
+  });
 
-      function handleSubmit(e) {
-        e.preventDefault();
-        fetch("http://localhost:3000/signup", {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }).then((r) => {
-          if (r.ok) {
-            window.alert("User created successfully");
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("http://localhost:3000/client/new", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((r) => {
+      if (r.ok) {
+        window.alert("User created successfully");
 
-            // navigate("/");
-          } else {
-            window.alert("Something went wrong");
-            r.json().then((err) => console.log(err.errors));
-          }
-        });
+        // navigate("/");
+      } else {
+        window.alert("Something went wrong");
+        r.json().then((err) => console.log(err.errors));
       }
+    });
+  }
 
-      function handleChange(e) {
-        const { name, value } = e.target;
-        setformData((prev) => {
-          return {
-            ...prev,
-            [name]: value,
-          };
-        });
-      }
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setformData((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  }
   return (
     <div className="container">
       <form className="signup-form" onSubmit={handleSubmit}>
@@ -68,11 +67,11 @@ const NewAppointment = () => {
           placeholder="Issue for appointment"
           id="issue"
         />
-       <br />
+        <br />
         <button>Book</button>
       </form>
     </div>
   );
-}
+};
 
-export default NewAppointment
+export default NewAppointment;

@@ -1,4 +1,5 @@
 import "./App.css";
+import CounsellorDashboard from "./components/CounsellorDashboard";
 import Forms from "./components/Forms";
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
@@ -11,8 +12,9 @@ function App() {
       {/* <NavBar />
       <Hero />
       <Forms /> */}
-      <UserDashboard />
-      <NewAppointment />
+      {/* <UserDashboard /> */}
+      {/* <NewAppointment /> */}
+      <CounsellorDashboard />
     </>
   );
 }

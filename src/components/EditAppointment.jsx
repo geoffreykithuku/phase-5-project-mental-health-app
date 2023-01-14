@@ -1,5 +1,5 @@
 import React, { useState, useNavigate } from "react";
-import "./NewAppointment.css";
+import "./EditAppointment.css";
 
 const EditAppointment = () => {
   const [formData, setformData] = useState({
@@ -84,8 +84,9 @@ const EditAppointment = () => {
           placeholder="Prescription"
           id="status"
           value={formData.status}
-        />
-        <button>Update Appointment</button>
+              />
+              <br />
+        <button>Complete Appointment</button>
       </form>
     </div>
   );

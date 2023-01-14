@@ -29,7 +29,7 @@ const Hero = () => {
                   mood, and boost your overall mental health
                 </h2>
                 <a href="#about" className="btn-get-started scrollto">
-                  Book Appointment
+                  Get Started
                 </a>
               </div>
             </div>

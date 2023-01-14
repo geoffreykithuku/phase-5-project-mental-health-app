@@ -49,17 +49,7 @@ function NavBar() {
                 Services
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/resources"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Resources
-              </NavLink>
-            </li>
+           
             <li className="nav-item">
               <NavLink
                 exact
@@ -68,7 +58,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Contact Us
+                Get Started
               </NavLink>
             </li>
           </ul>

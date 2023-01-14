@@ -22,8 +22,10 @@ const CounsellorAppointments = () => {
               <h5>Time: 9090</h5>
               <h5>Issue: counselling</h5>
               <h5>Status: pending</h5>
-              <button className="cancel">Cancel</button>
-              <button className="edit">Edit</button>
+              <button className="cancel">Reject</button>
+              <button className="approve">Approve</button>
+
+              <button className="edit">Complete</button>
             </p>
           </div>
         </div>
@@ -44,8 +46,9 @@ const CounsellorAppointments = () => {
               <h5>Time: 9090</h5>
               <h5>Issue: counselling</h5>
               <h5>Status: pending</h5>
-              <button className="cancel">Cancel</button>
-              <button className="edit">Edit</button>
+              <button className="cancel">Reject</button>
+              <button className="approve">Approve</button>
+              <button className="edit">Complete</button>
             </p>
           </div>
         </div>
@@ -66,8 +69,9 @@ const CounsellorAppointments = () => {
               <h5>Time: 9090</h5>
               <h5>Issue: counselling</h5>
               <h5>Status: pending</h5>
-              <button className="cancel">Cancel</button>
-              <button className="edit">Edit</button>
+              <button className="cancel">Reject</button>
+              <button className="approve">Approve</button>
+              <button className="edit">Complete</button>
             </p>
           </div>
         </div>

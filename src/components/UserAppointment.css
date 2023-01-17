@@ -1,0 +1,32 @@
+.up .appointment {
+  background-color: white;
+  margin: 2rem;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  z-index: 3;
+  box-shadow: rgb(0 0 0 / 30%) 0px 8px 24px;
+  border: 1px solid white;
+}
+.up .appointment:hover {
+  /* transform: scale(0.9); */
+  border: 1px solid rgb(71, 236, 20);
+}
+.up .cancel {
+  padding: 3 10px;
+  background-color: rgb(71, 236, 20);
+  color: white;
+}
+.up .edit {
+  padding: 0 5px;
+  background-color: rgb(87, 53, 238);
+  color: white;
+  margin-left: 20px;
+}
+.up .approve {
+  padding: 0 5px;
+  background-color: rgb(171, 158, 231);
+  color: white;
+  margin-left: 20px;
+}

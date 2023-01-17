@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Forms from "./components/PatientForms";
+
+import NavBar from "./components/NavBar";
+import ConsellorForms from "./components/ConsellorForms";
+import UserDoctorCheck from "./components/UserDoctorCheck";
+import EditAppointment from "./components/EditAppointment";
+import CounsellorAppointments from "./components/CounsellorAppointments";
+import CounsellorDashboard from "./components/CounsellorDashboard";
+import UserDashboard from "./components/UserDashboard";
+import Hero from "./components/Hero";
+import PatientForms from "./components/PatientForms";
+import { Route, Routes } from "react-router-dom";
+import NewAppointment from "./components/NewAppointment";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" exact element={<Hero />} />
+        <Route path="/check" element={<UserDoctorCheck />} />
+        <Route path="/docforms" element={<ConsellorForms />} />
+        <Route path="/patientforms" element={<PatientForms />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="/userdashboard/new" element={<NewAppointment />} />
+        <Route path="/userdashboard/id" element={<UserDashboard />} />
+
+        <Route path="/counsellordashboard" element={<CounsellorDashboard />} />
+        <Route path="/counsellordashboard/:id" element={<EditAppointment />} />
+      </Routes>
+    </>
   );
 }
 

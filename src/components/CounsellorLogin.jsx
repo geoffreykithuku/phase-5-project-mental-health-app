@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = (props) => {
+const ConsellorLogin = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -48,11 +48,14 @@ const Login = (props) => {
         />
         <button>Login</button>
       </form>
-      <button className="link-btn" onClick={() => props.onFormSwitch("signup")}>
+      <button
+        className="link-btn"
+        onClick={() => props.onFormSwitch("csignup")}
+      >
         Don't have an account? Signup here
       </button>
     </div>
   );
 };
 
-export default Login;
+export default ConsellorLogin;

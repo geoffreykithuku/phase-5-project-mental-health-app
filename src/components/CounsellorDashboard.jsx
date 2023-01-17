@@ -3,7 +3,9 @@ import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import "./CounsellorDashboard.css";
 import EditAppointment from "./EditAppointment";
 import CounsellorAppointments from "./CounsellorAppointments";
+import ConsellorForms from "./ConsellorForms";
 const CounsellorDashboard = () => {
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const [component, setComponent] = useState("appointments");
   const [click, setClick] = useState(false);
@@ -16,7 +18,13 @@ const CounsellorDashboard = () => {
     setClick(!click);
     setComponent("appointments");
   };
-  const handleLogout = () => {};
+      function handleLogin(user) {
+        setUser(user);
+      }
+      const handleLogout = () => setUser(null);
+      if (!user) {
+        return <ConsellorForms handleLogin={handleLogin} />;
+      }
   return (
     <div className="ud-container-fluid">
       <div className="row">

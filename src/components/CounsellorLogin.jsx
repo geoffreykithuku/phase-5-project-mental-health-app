@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 
-const ConsellorLogin = (props) => {
+const ConsellorLogin = ({onLogin, onFormSwitch}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    // fetch("/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ email, password }),
-    // }).then((r) => {
+    fetch("/clogin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    }).then((r) => {
 
-    //   if (r.ok) {
-    //     r.json().then((user) => onLogin(user));
-    //   } else {
-    //     r.json().then((err) => setErrors(err.errors));
-    //   }
-    // });
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+      } else {
+        r.json().then((err) => console.log(err.errors));
+      }
+    });
   }
   return (
     <div className="auth-form-container">
@@ -50,7 +50,7 @@ const ConsellorLogin = (props) => {
       </form>
       <button
         className="link-btn"
-        onClick={() => props.onFormSwitch("csignup")}
+        onClick={() =>onFormSwitch("csignup")}
       >
         Don't have an account? Signup here
       </button>

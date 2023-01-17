@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "./footer";
 import About from "./About";
 import "./Hero.css";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [input, setInput] = useState("");
@@ -12,6 +13,7 @@ const Hero = () => {
   function handleClick() {
     setInput("");
   }
+  const navigate = useNavigate();
   return (
     <>
       <section id="hero">
@@ -30,9 +32,14 @@ const Hero = () => {
                   Our app is designed to help you manage stress, improve your
                   mood, and boost your overall mental health
                 </h2>
-                <a href="#" className="btn-get-started scrollto">
+                <button
+                  onClick={() => {
+                    navigate("/check");
+                  }}
+                  className="btn-get-started scrollto"
+                >
                   Get Started
-                </a>
+                </button>
               </div>
             </div>
 

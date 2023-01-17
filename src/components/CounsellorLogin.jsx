@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-const Login = ({onLogin, onFormSwitch}) => {
+const ConsellorLogin = ({onLogin, onFormSwitch}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/clogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -15,7 +15,7 @@ const Login = ({onLogin, onFormSwitch}) => {
     }).then((r) => {
 
       if (r.ok) {
-        r.json().then((user) =>onLogin(user));
+        r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => console.log(err.errors));
       }
@@ -48,11 +48,14 @@ const Login = ({onLogin, onFormSwitch}) => {
         />
         <button>Login</button>
       </form>
-      <button className="link-btn" onClick={() => onFormSwitch("signup")}>
+      <button
+        className="link-btn"
+        onClick={() =>onFormSwitch("csignup")}
+      >
         Don't have an account? Signup here
       </button>
     </div>
   );
 };
 
-export default Login;
+export default ConsellorLogin;

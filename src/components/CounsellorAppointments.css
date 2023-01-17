@@ -1,0 +1,31 @@
+.ca-container .appointment {
+  background-color: white;
+  margin: 2rem;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  padding: 10px;
+ box-shadow: rgb(0 0 0 / 50%) 0px 8px 24px;
+     border: 1px solid white;
+}
+.ca-container .cancel {
+  padding: 0 5px;
+  background-color: rgb(71, 236, 20);
+  color: white;
+  border: 1px solid rgb(12, 230, 12);
+}
+.ca-container .edit {
+  padding: 0 5px;
+  background-color: rgb(87, 53, 238);
+  color: white;
+  margin-left: 20px;
+  border: 1px solid rgb(12, 230, 12);
+}
+.ca-container .approve {
+  padding: 0 5px;
+  background-color: rgb(171, 158, 231);
+  color: white;
+  margin-left: 20px;
+  border: 1px solid rgb(12, 230, 12);
+}

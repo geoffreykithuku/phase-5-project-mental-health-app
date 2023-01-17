@@ -1,0 +1,39 @@
+.appoint-container {
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.appoint-form{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 50%) 0px 8px 24px;
+     border: 1px solid white;
+    color: blueviolet;
+}
+.ap-input{
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+}
+.ap-textarea{
+     border: 1px solid blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+}
+.ap-button {
+    background-color: blueviolet;
+    color: white;
+}
+@media screen and (max-width: 650px) {
+    .appoint-container{
+        margin: auto;
+    }
+.appoint-form{
+    margin: auto;
+    width: 50%;
+}
+}

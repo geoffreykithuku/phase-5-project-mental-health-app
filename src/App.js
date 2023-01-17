@@ -11,8 +11,7 @@ import Hero from "./components/Hero";
 import PatientForms from "./components/PatientForms";
 import { Route, Routes } from "react-router-dom";
 import NewAppointment from "./components/NewAppointment";
-import About from "./components/About"
-
+import About from "./components/About";
 
 function App() {
   return (
@@ -29,10 +28,15 @@ function App() {
         <Route path="/userdashboard/new" element={<NewAppointment />} />
         <Route path="/userdashboard/id" element={<UserDashboard />} />
 
-        <Route path="/counsellordashboard" element={<CounsellorDashboard />} />
-        <Route path="/counsellordashboard/:id" element={<EditAppointment />} />
+        <Route
+          path="counsellordashboard"
+          exact
+          element={<CounsellorDashboard />}
+        >
+          <Route path="appointments" element={<CounsellorAppointments />} />
+          <Route path=":id" element={<EditAppointment />} />
+        </Route>
       </Routes>
-     
     </>
   );
 }

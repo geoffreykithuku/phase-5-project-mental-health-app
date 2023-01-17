@@ -1,62 +1,53 @@
 import React, { useState } from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { Navigate, NavLink, useNavigate, useParams } from "react-router-dom";
+import CounsellorAppointments from "./CounsellorAppointments";
 import "./CounsellorDashboard.css";
 import EditAppointment from "./EditAppointment";
-import CounsellorAppointments from "./CounsellorAppointments";
-import ConsellorForms from "./ConsellorForms";
 const CounsellorDashboard = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const [component, setComponent] = useState("appointments");
   const [click, setClick] = useState(false);
-
-  const editAppointment = () => {
-    setComponent("edit");
-    // navigate('/counsellordashboard/:id')
-  };
+  const { id } = useParams();
   const allAppointments = () => {
     setClick(!click);
-    setComponent("appointments");
+    navigate(`/counsellordashboard/appointments`);
   };
-      function handleLogin(user) {
-        setUser(user);
-      }
-      const handleLogout = () => setUser(null);
-      if (!user) {
-        return <ConsellorForms handleLogin={handleLogin} />;
-      }
+
+  // function handleLogin(user) {
+  //   setUser(user);
+  // }
+  const handleLogout = () => setUser(null);
+  // if (!user) {
+  //   return <ConsellorForms handleLogin={handleLogin} />;
+  // }
   return (
-    <div className="ud-container-fluid">
+    <div className="cd-container-fluid">
       <div className="row">
-        <div className="ud-nav-container">
-          <ul className={click ? "ud-nav-menu active" : "ud-nav-menu"}>
-            <li className="ud-nav-item">
-              <NavLink
+        <div className="cd-nav-container">
+          <ul className={click ? "cd-nav-menu active" : "cd-nav-menu"}>
+            <li className="cd-nav-item">
+              <button
                 activeClassName="active"
-                className="ud-nav-links"
+                className="cd-nav-links"
                 onClick={allAppointments}
               >
                 Appointments
-              </NavLink>
+              </button>
             </li>
 
-            <li className="ud-nav-item">
-              <NavLink
+            <li className="cd-nav-item">
+              <button
                 activeClassName="active"
-                className="ud-nav-links"
+                className="cd-nav-links"
                 onClick={handleLogout}
               >
                 Logout
-              </NavLink>
+              </button>
             </li>
           </ul>
         </div>
-        {component === "appointments" ? (
-          <CounsellorAppointments editAppointment={editAppointment} />
-        ) : (
-          <EditAppointment />
-        )}
       </div>
+      {id ? <EditAppointment /> : <CounsellorAppointments />}
     </div>
   );
 };

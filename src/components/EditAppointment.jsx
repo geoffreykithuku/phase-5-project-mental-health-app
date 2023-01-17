@@ -1,31 +1,30 @@
 import React, { useState, useNavigate } from "react";
 import "./EditAppointment.css";
-
+import Appointments from "../data";
+import { useParams } from "react-router-dom";
 const EditAppointment = () => {
-  const [formData, setformData] = useState({
-    date: "",
-    time: "",
-    issue: "",
-  });
+  const params = useParams();
+  const app = Appointments.find((app) => app.id === params.id);
+  const [formData, setformData] = useState(app);
+  console.log(app);
 
   function handleSubmit(e) {
-    e.preventDefault();
-    fetch("http://localhost:3000/client/new", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((r) => {
-      if (r.ok) {
-        window.alert("User created successfully");
-
-        // navigate("/");
-      } else {
-        window.alert("Something went wrong");
-        r.json().then((err) => console.log(err.errors));
-      }
-    });
+    // e.preventDefault();
+    // fetch("http://localhost:3000/client/new", {
+    //   method: "POST",
+    //   body: JSON.stringify(formData),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // }).then((r) => {
+    //   if (r.ok) {
+    //     window.alert("User created successfully");
+    //     // navigate("/");
+    //   } else {
+    //     window.alert("Something went wrong");
+    //     r.json().then((err) => console.log(err.errors));
+    //   }
+    // });
   }
 
   function handleChange(e) {
@@ -44,7 +43,7 @@ const EditAppointment = () => {
         <input
           className="ea-input"
           onChange={handleChange}
-          type="date"
+          type="text"
           name="date"
           placeholder="Date of appointment"
           id="date"
@@ -54,7 +53,7 @@ const EditAppointment = () => {
         <input
           className="ea-input"
           onChange={handleChange}
-          type="time"
+          type="text"
           name="time"
           placeholder="Time of appointment"
           id="time"
@@ -88,7 +87,7 @@ const EditAppointment = () => {
           name="notes"
           placeholder="Prescription"
           id="status"
-          value={formData.status}
+          value={formData.prescription}
         />
         <br />
         <button className="ea-button">Complete Appointment</button>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-const ConsellorSignup = ({onLogin, onFormSwitch}) => {
+const ConsellorSignup = ({ onLogin, onFormSwitch }) => {
   const navigate = useNavigate();
   const [formData, setformData] = useState({
     name: "",
@@ -13,20 +13,20 @@ const ConsellorSignup = ({onLogin, onFormSwitch}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/csignup", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-      } else {
-        r.json().then((err) => console.log(err.errors));
-      }
-    });
-    
+    // fetch("/csignup", {
+    //   method: "POST",
+    //   body: JSON.stringify(formData),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // }).then((r) => {
+    //   if (r.ok) {
+    //     r.json().then((user) => onLogin(user));
+    //   } else {
+    //     r.json().then((err) => console.log(err.errors));
+    //   }
+    // });
+    navigate("/counsellordashboard");
   }
 
   function handleChange(e) {

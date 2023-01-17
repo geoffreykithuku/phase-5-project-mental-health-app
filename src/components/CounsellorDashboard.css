@@ -1,4 +1,4 @@
-.ud-nav-container {
+.cd-nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,28 +7,32 @@
   max-width: 1500px;
 }
 
-.ud-nav-menu {
+.cd-nav-menu {
   display: flex;
   list-style: none;
   text-align: center;
   margin-right: 2rem;
 }
 
-.ud-nav-links {
-  color: #4121f5;
+.cd-nav-links {
+  color: rgb(125, 26, 238);
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  background-color: rgb(221, 207, 233);
+  padding: 0.2rem 4rem;
   height: 100%;
   border-bottom: 3px solid transparent;
 }
+.cd-nav-links:hover {
+  color: rgb(221, 207, 233);
+  background-color: rgb(125, 26, 238);
+}
 
-.ud-nav-item {
+.cd-nav-item {
   line-height: 40px;
   margin-right: 1rem;
 }
 
-
-.ud-nav-item .active {
+.cd-nav-item .active {
   color: #b940ff;
   border: 1px solid rgb(29, 182, 29);
 }

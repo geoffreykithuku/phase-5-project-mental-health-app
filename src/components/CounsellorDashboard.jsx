@@ -10,6 +10,7 @@ const CounsellorDashboard = () => {
 
   const editAppointment = () => {
     setComponent("edit");
+    // navigate('/counsellordashboard/:id')
   };
   const allAppointments = () => {
     setClick(!click);

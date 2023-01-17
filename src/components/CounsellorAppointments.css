@@ -1,12 +1,13 @@
 .ca-container .appointment {
-  background-color: rgb(224, 224, 240);
+  background-color: white;
   margin: 2rem;
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+  z-index: 3;
   padding: 10px;
-
-  border: 1px solid rgb(12, 230, 12);
+ box-shadow: rgb(0 0 0 / 50%) 0px 8px 24px;
+     border: 1px solid white;
 }
 .ca-container .cancel {
   padding: 0 5px;

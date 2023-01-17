@@ -12,6 +12,7 @@ import UserDashboard from "./components/UserDashboard";
 import Hero from "./components/Hero";
 import PatientForms from "./components/PatientForms";
 import { Route, Routes } from "react-router-dom";
+import NewAppointment from "./components/NewAppointment";
 
 function App() {
   return (
@@ -24,8 +25,11 @@ function App() {
         <Route path="/docforms" element={<ConsellorForms />} />
         <Route path="/patientforms" element={<PatientForms />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="/userdashboard/new" element={<NewAppointment />} />
+        <Route path="/userdashboard/id" element={<UserDashboard />} />
 
         <Route path="/counsellordashboard" element={<CounsellorDashboard />} />
+        <Route path="/counsellordashboard/:id" element={<EditAppointment />} />
       </Routes>
     </>
   );

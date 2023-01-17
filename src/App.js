@@ -13,6 +13,7 @@ import { Route, Routes } from "react-router-dom";
 import NewAppointment from "./components/NewAppointment";
 import About from "./components/About"
 
+
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/counsellordashboard" element={<CounsellorDashboard />} />
         <Route path="/counsellordashboard/:id" element={<EditAppointment />} />
       </Routes>
+     
     </>
   );
 }

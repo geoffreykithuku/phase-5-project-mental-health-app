@@ -23,15 +23,15 @@ body{
     box-sizing: border-box;
   
 }
-.container{
+.footer .container{
 	max-width: 1170px;
 	margin:auto;
 }
-.row{
+.footer .row{
 	display: flex;
 	flex-wrap: wrap;
 }
-ul{
+.footer ul{
 	list-style: none;
 }
 .footer{
@@ -55,7 +55,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #e91e63;
+	background-color: #8547e9;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;

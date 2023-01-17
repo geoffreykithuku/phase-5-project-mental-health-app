@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Footer from "./footer";
+import About from "./About";
 import "./Hero.css";
 
 const Hero = () => {
@@ -125,6 +127,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <About />
     </>
   );
 };

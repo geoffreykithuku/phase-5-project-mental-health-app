@@ -1,4 +1,5 @@
 import React from "react";
+import './footer.css'
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="footer-col">
-              <h4>Mental health Hospital</h4>
+              <h4>MindEase</h4>
               <ul>
                 <li>
                   <a href="#">about us</a>

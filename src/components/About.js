@@ -1,6 +1,6 @@
 import React from "react";
-// import "../index.css"
 import styled from "styled-components";
+import Footer from "./footer";
 
 function About(){
 
@@ -164,7 +164,8 @@ return (
             </ul>
             <Button1>Book an Appointment</Button1>
         </Services>
-    </Section2>
+        </Section2>
+        <Footer />
     </>
    
 

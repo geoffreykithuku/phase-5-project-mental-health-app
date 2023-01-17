@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 
-const Login = (props) => {
+const Login = ({onLogin, onFormSwitch}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    // fetch("/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ email, password }),
-    // }).then((r) => {
+    fetch("/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    }).then((r) => {
 
-    //   if (r.ok) {
-    //     r.json().then((user) => onLogin(user));
-    //   } else {
-    //     r.json().then((err) => setErrors(err.errors));
-    //   }
-    // });
+      if (r.ok) {
+        r.json().then((user) =>onLogin(user));
+      } else {
+        r.json().then((err) => console.log(err.errors));
+      }
+    });
   }
   return (
     <div className="auth-form-container">
@@ -48,7 +48,7 @@ const Login = (props) => {
         />
         <button>Login</button>
       </form>
-      <button className="link-btn" onClick={() => props.onFormSwitch("signup")}>
+      <button className="link-btn" onClick={() => onFormSwitch("signup")}>
         Don't have an account? Signup here
       </button>
     </div>

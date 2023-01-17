@@ -3,11 +3,14 @@ import { NavLink } from "react-router-dom";
 import "./UserDashboard.css";
 import NewAppointment from "./NewAppointment";
 import UserAppointments from "./UserAppointments";
+import PatientForms from "./PatientForms"
 
 const UserDashboard = () => {
+  const [user, setUser] = useState(null);
+  
   const [component, setComponent] = useState("appointments");
   const [click, setClick] = useState(false);
-  
+
   const newAppointment = () => {
     setClick(!click);
     setComponent("newAppointment");
@@ -16,7 +19,13 @@ const UserDashboard = () => {
     setClick(!click);
     setComponent("appointments");
   };
-  const handleLogout = () => {};
+    function handleLogin(user) {
+      setUser(user);
+    }
+  const handleLogout = () => setUser(null);
+  if (!user) {
+    return <PatientForms  handleLogin={handleLogin}/>
+  }
   return (
     <div className="ud-container-fluid">
       <div className="row">

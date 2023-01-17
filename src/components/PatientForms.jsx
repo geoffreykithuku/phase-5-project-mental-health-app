@@ -3,7 +3,7 @@ import "./PatientForms.css";
 import Login from "./Login";
 import Signup from "./Signup";
 
-const Forms = () => {
+const Forms = ({handleLogin}) => {
   const [currentForm, setCurrentForm] = useState("login");
 
   const toggleForm = (formName) => {
@@ -21,7 +21,7 @@ const Forms = () => {
         </div>
         <div className="forms-right">
           {currentForm === "login" ? (
-            <Login onFormSwitch={toggleForm} />
+            <Login onLogin={handleLogin} onFormSwitch={toggleForm} />
           ) : (
             <Signup onFormSwitch={toggleForm} />
           )}

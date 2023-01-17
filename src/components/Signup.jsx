@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-const Signup = (props) => {
+const Signup = ({onFormSwitch, onLogin}) => {
   const navigate = useNavigate();
   const [formData, setformData] = useState({
     name: "",
@@ -12,23 +12,20 @@ const Signup = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // fetch("/signup", {
-    //   method: "POST",
-    //   body: JSON.stringify(formData),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((r) => {
-    //   if (r.ok) {
-    //     window.alert("User created successfully");
-
-    //     navigate("/userdashboard");
-    //   } else {
-    //     window.alert("Something went wrong");
-    //     r.json().then((err) => console.log(err.errors));
-    //   }
-    // });
-    navigate("/userdashboard");
+    fetch("/signup", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((r) => {
+     if (r.ok) {
+       r.json().then((user) => onLogin(user));
+     } else {
+       r.json().then((err) => console.log(err.errors));
+     }
+    });
+    
   }
 
   function handleChange(e) {
@@ -81,7 +78,7 @@ const Signup = (props) => {
         />
         <button>Signup</button>
       </form>
-      <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
+      <button className="link-btn" onClick={() => onFormSwitch("login")}>
         Already have an account? Login here
       </button>
     </div>

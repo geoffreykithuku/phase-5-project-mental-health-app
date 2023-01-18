@@ -15,11 +15,16 @@
 }
 
 .ud-nav-links {
-  color: #4121f5;
+  color: rgb(125, 26, 238);
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  background-color: rgb(221, 207, 233);
+  padding: 0.2rem 4rem;
   height: 100%;
   border-bottom: 3px solid transparent;
+}
+.ud-nav-links:hover {
+  color: rgb(221, 207, 233);
+  background-color: rgb(125, 26, 238);
 }
 
 .ud-nav-item {

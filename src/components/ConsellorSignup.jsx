@@ -13,20 +13,19 @@ const ConsellorSignup = ({ onLogin, onFormSwitch }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // fetch("/csignup", {
-    //   method: "POST",
-    //   body: JSON.stringify(formData),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((r) => {
-    //   if (r.ok) {
-    //     r.json().then((user) => onLogin(user));
-    //   } else {
-    //     r.json().then((err) => console.log(err.errors));
-    //   }
-    // });
-    navigate("/counsellordashboard");
+    fetch("http://localhost:3000/csignup", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+      } else {
+        r.json().then((err) => console.log(err.errors));
+      }
+    });
   }
 
   function handleChange(e) {
@@ -63,7 +62,7 @@ const ConsellorSignup = ({ onLogin, onFormSwitch }) => {
         <input
           onChange={handleChange}
           type="specialty"
-          name="email"
+          name="specialty"
           placeholder="Enter your specialty"
           id="specialty"
           value={formData.specialty}

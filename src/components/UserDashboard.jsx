@@ -1,72 +1,69 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate, useParams } from "react-router-dom";
 import "./UserDashboard.css";
 import NewAppointment from "./NewAppointment";
 import UserAppointments from "./UserAppointments";
-import PatientForms from "./PatientForms"
+import PatientForms from "./PatientForms";
+import EditAppointment from "./EditAppointment";
 
 const UserDashboard = () => {
+  const slug = useParams();
   const [user, setUser] = useState(null);
-  
-  const [component, setComponent] = useState("appointments");
+  const [component, setComponent] = useState("new");
   const [click, setClick] = useState(false);
 
   const newAppointment = () => {
     setClick(!click);
-    setComponent("newAppointment");
+    setComponent("new");
   };
   const allAppointments = () => {
     setClick(!click);
     setComponent("appointments");
   };
-    function handleLogin(user) {
-      setUser(user);
-    }
-  const handleLogout = () => setUser(null);
-  if (!user) {
-    return <PatientForms  handleLogin={handleLogin}/>
+  function handleLogin(user) {
+    setUser(user);
   }
+  const handleLogout = () => setUser(null);
+  // if (!user) {
+  //   return <PatientForms  handleLogin={handleLogin}/>
+  // }
   return (
     <div className="ud-container-fluid">
       <div className="row">
         <div className="ud-nav-container">
           <ul className={click ? "ud-nav-menu active" : "ud-nav-menu"}>
             <li className="ud-nav-item">
-              <NavLink
+              <button
                 activeClassName="active"
                 className="ud-nav-links"
                 onClick={newAppointment}
               >
                 New
-              </NavLink>
+              </button>
             </li>
             <li className="ud-nav-item">
-              <NavLink
+              <button
                 activeClassName="active"
                 className="ud-nav-links"
                 onClick={allAppointments}
               >
                 Appointments
-              </NavLink>
+              </button>
             </li>
 
             <li className="ud-nav-item">
-              <NavLink
+              <button
                 activeClassName="active"
                 className="ud-nav-links"
                 onClick={handleLogout}
               >
                 Logout
-              </NavLink>
+              </button>
             </li>
           </ul>
         </div>
-        {component === "appointments" ? (
-          <UserAppointments />
-        ) : (
-          <NewAppointment />
-        )}
       </div>
+      {component === "new" ? <NewAppointment setComponent={setComponent} /> : <UserAppointments />}
     </div>
   );
 };

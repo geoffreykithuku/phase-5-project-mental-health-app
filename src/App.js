@@ -12,6 +12,7 @@ import PatientForms from "./components/PatientForms";
 import { Route, Routes } from "react-router-dom";
 import NewAppointment from "./components/NewAppointment";
 import About from "./components/About";
+import UserAppointments from "./components/UserAppointments";
 
 function App() {
   return (
@@ -24,9 +25,10 @@ function App() {
         <Route path="/check" element={<UserDoctorCheck />} />
         <Route path="/docforms" element={<ConsellorForms />} />
         <Route path="/patientforms" element={<PatientForms />} />
-        <Route path="/userdashboard" element={<UserDashboard />} />
-        <Route path="/userdashboard/new" element={<NewAppointment />} />
-        <Route path="/userdashboard/id" element={<UserDashboard />} />
+
+        <Route path="/usersdashboard" exact element={<UserDashboard />} />
+         
+     
 
         <Route
           path="counsellordashboard"

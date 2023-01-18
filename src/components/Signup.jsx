@@ -1,32 +1,29 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-const Signup = ({onFormSwitch, onLogin}) => {
+const Signup = ({ onFormSwitch, onLogin }) => {
   const navigate = useNavigate();
   const [formData, setformData] = useState({
     name: "",
     email: "",
     password: "",
-    confirm_password: "",
+    password_confirmation: "",
   });
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/signup", {
+    fetch("http://localhost:3000/signup", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((r) => {
-     if (r.ok) {
-       r.json().then((user) => onLogin(user));
-     } else {
-       r.json().then((err) => console.log(err.errors));
-     }
-    });
-    
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
   }
+  console.log(formData);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -39,7 +36,7 @@ const Signup = ({onFormSwitch, onLogin}) => {
   }
   return (
     <div className="auth-form-container">
-      <form className="signup-form" onSubmit={handleSubmit}>
+      <form className="signup-form">
         <label htmlFor="name">Name</label>
         <input
           onChange={handleChange}
@@ -70,13 +67,13 @@ const Signup = ({onFormSwitch, onLogin}) => {
         <label htmlFor="confirm_password">Confirm Password</label>
         <input
           onChange={handleChange}
-          value={formData.confirm_password}
+          value={formData.password_confirmation}
           type="password"
-          name="confirm_password"
+          name="password_confirmation"
           placeholder="Confirm your password"
-          id="confirm_password"
+          id="password_confirmation"
         />
-        <button>Signup</button>
+        <button onClick={handleSubmit}>Signup</button>
       </form>
       <button className="link-btn" onClick={() => onFormSwitch("login")}>
         Already have an account? Login here

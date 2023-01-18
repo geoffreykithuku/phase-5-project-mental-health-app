@@ -1,16 +1,21 @@
 import React, { useState, useNavigate } from "react";
+import { Navigate } from "react-router-dom";
 import "./NewAppointment.css";
-const NewAppointment = () => {
-  //   const navigate = useNavigate();
+const NewAppointment = ({ setComponent }) => {
   const [formData, setformData] = useState({
-    date: "",
-    time: "",
+    appointment_date: "",
+    appointment_time: "",
     issue: "",
+    status: "Pending",
+    prescription: "Unavailable",
+    doctor_id: 1,
+    patient_id: 1,
   });
+  console.log(formData);
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/client/new", {
+    fetch("http://localhost:3000/newappointment", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {
@@ -19,8 +24,7 @@ const NewAppointment = () => {
     }).then((r) => {
       if (r.ok) {
         window.alert("User created successfully");
-
-        // navigate("/");
+        setComponent("appointments");
       } else {
         window.alert("Something went wrong");
         r.json().then((err) => console.log(err.errors));
@@ -45,20 +49,20 @@ const NewAppointment = () => {
           className="ap-input"
           onChange={handleChange}
           type="date"
-          name="date"
+          name="appointment_date"
           placeholder="Date of appointment"
           id="date"
-          value={formData.date}
+          value={formData.appointment_date}
         />
         <label htmlFor="time">Time</label>
         <input
           className="ap-input"
           onChange={handleChange}
           type="time"
-          name="time"
+          name="appointment_time"
           placeholder="Time of appointment"
           id="time"
-          value={formData.time}
+          value={formData.appointment_time}
         />
         <label htmlFor="issue">Issue</label>
         <textarea

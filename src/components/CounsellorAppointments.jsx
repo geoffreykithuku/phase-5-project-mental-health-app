@@ -53,7 +53,10 @@ const CounsellorAppointments = () => {
                     <h5>Prescription: Unavailable</h5>
                   )}
                   <button className="cancel">Reschedule</button>
-                  <button onClick={handleApprove} className="approve">
+                  <button
+                    onClick={() => (ap.status = "approved")}
+                    className="approve"
+                  >
                     Approve
                   </button>
 

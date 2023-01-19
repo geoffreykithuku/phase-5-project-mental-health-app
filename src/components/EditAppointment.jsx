@@ -1,30 +1,36 @@
-import React, { useState, useNavigate } from "react";
+import React, { useState, useNavigate, useEffect } from "react";
 import "./EditAppointment.css";
-import Appointments from "../data";
 import { useParams } from "react-router-dom";
-const EditAppointment = () => {
-  const params = useParams();
-  const app = Appointments.find((app) => app.id === params.id);
-  const [formData, setformData] = useState(app);
-  console.log(app);
+const EditAppointment = ({ id, setComponent }) => {
+  const [formData, setformData] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/appointments/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setformData(data);
+      });
+  }, []);
+
+  console.log(formData);
 
   function handleSubmit(e) {
-    // e.preventDefault();
-    // fetch("http://localhost:3000/client/new", {
-    //   method: "POST",
-    //   body: JSON.stringify(formData),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((r) => {
-    //   if (r.ok) {
-    //     window.alert("User created successfully");
-    //     // navigate("/");
-    //   } else {
-    //     window.alert("Something went wrong");
-    //     r.json().then((err) => console.log(err.errors));
-    //   }
-    // });
+    e.preventDefault();
+    fetch(`http://localhost:3000/appointments/${id}/complete`, {
+      method: "PATCH",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((r) => {
+      if (r.ok) {
+        window.alert("Appointment completed successfully");
+        // navigate("/");
+      } else {
+        window.alert("Something went wrong");
+        r.json().then((err) => console.log(err.errors));
+      }
+    });
   }
 
   function handleChange(e) {
@@ -44,20 +50,20 @@ const EditAppointment = () => {
           className="ea-input"
           onChange={handleChange}
           type="text"
-          name="date"
+          name="appointment_date"
           placeholder="Date of appointment"
           id="date"
-          value={formData.date}
+          value={formData.appointment_date}
         />
         <label htmlFor="time">Time</label>
         <input
           className="ea-input"
           onChange={handleChange}
           type="text"
-          name="time"
+          name="appointment_time"
           placeholder="Time of appointment"
           id="time"
-          value={formData.time}
+          value={formData.appointment_time}
         />
         <label htmlFor="issue">Issue</label>
         <textarea
@@ -84,7 +90,7 @@ const EditAppointment = () => {
           className="ea-textarea"
           onChange={handleChange}
           type="text"
-          name="notes"
+          name="prescription"
           placeholder="Prescription"
           id="status"
           value={formData.prescription}

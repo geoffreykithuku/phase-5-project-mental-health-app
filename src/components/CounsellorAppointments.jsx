@@ -1,33 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CounsellorAppointments.css";
-import Appointments from "../data";
+
 import { useNavigate, useParams } from "react-router-dom";
-const CounsellorAppointments = () => {
+const CounsellorAppointments = ({ setComponent, handleEdit }) => {
   const navigate = useNavigate();
   const params = useParams();
-  const handleApprove = () => {
-    // approve an appointment
-    //  fetch(
-    //    `/appointents/${id}``,
-    //    {
-    //      method: "PATCH",
-    //      headers: {
-    //        "Content-Type": "application/json",
-    //      },
-    //      body: JSON.stringify(appointment),
-    //    }
-    //  )
-    //    .then((res) => res.json())
-    //    .then((data) => {
-    //      navigate(`/contacts/view/${data.id}`);
-    //    });
+
+  const [app, setAppointments] = useState([]);
+  const [approved, setApproved] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/appointments")
+      .then((res) => res.json())
+      .then((data) => setAppointments(data));
+  }, [approved]);
+  const formData = {
+    status: "Approved",
   };
-  // const ap = Appointments.find((app) => app.id === params.id);
+  const handleApprove = (a) => {
+    fetch(`http://localhost:3000/appointments/${a.id}/approve`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      if (res.ok) {
+        alert("Approval successful");
+        setApproved(!approved);
+      } else {
+        alert("Approval unsuccessful");
+      }
+    });
+  };
 
   return (
     <div className="ca-container">
       <div className="row m-auto justify-center">
-        {Appointments.map((ap) => {
+        {app.map((ap) => {
           return (
             <div
               key={ap.id}
@@ -40,11 +50,11 @@ const CounsellorAppointments = () => {
                   <i className="bx bx-tachometer"></i>
                 </div>
                 <h4 className="title">
-                  <a href="">Dr. Mathew</a>
+                  <a href="">Patient: {ap.patient.name}</a>
                 </h4>
                 <p className="description">
-                  <h5>Day: {ap.date}</h5>
-                  <h5>Time: {ap.time}</h5>
+                  <h5>Day: {ap.appointment_date}</h5>
+                  <h5>Time: {ap.appointment_time}</h5>
                   <h5>Issue: {ap.issue}</h5>
                   <h5>Status: {ap.status}</h5>
                   {ap.prescription ? (
@@ -53,16 +63,14 @@ const CounsellorAppointments = () => {
                     <h5>Prescription: Unavailable</h5>
                   )}
                   <button className="cancel">Reschedule</button>
-                  <button
-                    onClick={() => (ap.status = "approved")}
-                    className="approve"
-                  >
+                  <button onClick={() => handleApprove(ap)} className="approve">
                     Approve
                   </button>
 
                   <button
                     onClick={() => {
-                      navigate(`/counsellordashboard/${ap.id}`);
+                      handleEdit(ap.id);
+                      setComponent("edit");
                     }}
                     className="edit"
                   >

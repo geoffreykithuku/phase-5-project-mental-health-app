@@ -4,14 +4,18 @@ import CounsellorAppointments from "./CounsellorAppointments";
 import "./CounsellorDashboard.css";
 import EditAppointment from "./EditAppointment";
 const CounsellorDashboard = () => {
+  const [component, setComponent] = useState("appointments");
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
-  const { id } = useParams();
   const allAppointments = () => {
     setClick(!click);
-    navigate(`/counsellordashboard/appointments`);
+    setComponent("appointments");
   };
+  const [id, setId] = useState(null);
+  function handleEdit(a_id) {
+    setId((prev) => (prev = a_id));
+  }
 
   // function handleLogin(user) {
   //   setUser(user);
@@ -20,6 +24,7 @@ const CounsellorDashboard = () => {
   // if (!user) {
   //   return <ConsellorForms handleLogin={handleLogin} />;
   // }
+
   return (
     <div className="cd-container-fluid">
       <div className="row">
@@ -47,7 +52,14 @@ const CounsellorDashboard = () => {
           </ul>
         </div>
       </div>
-      {id ? <EditAppointment /> : <CounsellorAppointments />}
+      {component === "appointments" ? (
+        <CounsellorAppointments
+          handleEdit={handleEdit}
+          setComponent={setComponent}
+        />
+      ) : (
+        <EditAppointment id={id} setComponent={setComponent} />
+      )}
     </div>
   );
 };

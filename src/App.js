@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import Forms from "./components/PatientForms";
+
+import NavBar from "./components/NavBar";
+import ConsellorForms from "./components/ConsellorForms";
+import UserDoctorCheck from "./components/UserDoctorCheck";
+import EditAppointment from "./components/EditAppointment";
+import CounsellorAppointments from "./components/CounsellorAppointments";
+import CounsellorDashboard from "./components/CounsellorDashboard";
+import UserDashboard from "./components/UserDashboard";
+import Hero from "./components/Hero";
+import PatientForms from "./components/PatientForms";
+import { Route, Routes } from "react-router-dom";
+import NewAppointment from "./components/NewAppointment";
+import About from "./components/About";
+import UserAppointments from "./components/UserAppointments";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" exact element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/check" element={<UserDoctorCheck />} />
+        <Route path="/docforms" element={<ConsellorForms />} />
+        <Route path="/patientforms" element={<PatientForms />} />
+
+        <Route path="/usersdashboard" exact element={<UserDashboard />} />
+         
+     
+
+        <Route
+          path="counsellordashboard"
+          exact
+          element={<CounsellorDashboard />}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route path="appointments" element={<CounsellorAppointments />} />
+          <Route path=":id" element={<EditAppointment />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

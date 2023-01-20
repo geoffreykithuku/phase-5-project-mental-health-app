@@ -12,7 +12,7 @@ const EditAppointment = ({ id, setComponent }) => {
       });
   }, []);
 
-  console.log(formData);
+
 
   function handleSubmit(e) {
     e.preventDefault();

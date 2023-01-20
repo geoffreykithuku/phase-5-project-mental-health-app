@@ -7,7 +7,6 @@ import PatientForms from "./PatientForms";
 import EditAppointment from "./EditAppointment";
 
 const UserDashboard = () => {
-  const slug = useParams();
   const [user, setUser] = useState(null);
   const [component, setComponent] = useState("appointments");
   const [click, setClick] = useState(false);

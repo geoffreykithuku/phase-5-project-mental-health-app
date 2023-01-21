@@ -16,7 +16,7 @@ const Login = ({onLogin, onFormSwitch}) => {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => console.log(err.errors));
+        r.json().then((err) => alert(err.errors));
       }
     });
   }

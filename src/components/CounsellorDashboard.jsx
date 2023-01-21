@@ -12,16 +12,14 @@ const CounsellorDashboard = () => {
   const [click, setClick] = useState(false);
   const allAppointments = () => {
     setClick(!click);
-    setFilter(!filter);
     setComponent("appointments");
   };
   const [id, setId] = useState(null);
   function handleEdit(a_id) {
     setId((prev) => (prev = a_id));
   }
-  const [filter, setFilter] = useState(false);
   function myAppoints() {
-    setFilter(!filter);
+    setComponent("myappoints");
   }
   function handleLogin(user) {
     setUser(user);
@@ -75,16 +73,17 @@ const CounsellorDashboard = () => {
           </ul>
         </div>
       </div>
-      
-      {filter? <MyAppointments user={user}/> :component === "appointments" ? (
+
+      {component === "appointments" ? (
         <CounsellorAppointments
           handleEdit={handleEdit}
           setComponent={setComponent}
-          filter={filter}
           user={user}
         />
-      ) : (
+      ) : component === "edit" ? (
         <EditAppointment id={id} setComponent={setComponent} />
+      ) : (
+        <MyAppointments setComponent={setComponent} user={user} handleEdit={handleEdit} />
       )}
     </div>
   );

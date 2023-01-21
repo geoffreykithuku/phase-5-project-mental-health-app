@@ -4,6 +4,7 @@ import CounsellorAppointments from "./CounsellorAppointments";
 import "./CounsellorDashboard.css";
 import EditAppointment from "./EditAppointment";
 import ConsellorForms from "./ConsellorForms";
+import MyAppointments from "./MyAppointments";
 const CounsellorDashboard = () => {
   const [component, setComponent] = useState("appointments");
   const [user, setUser] = useState(null);
@@ -11,13 +12,17 @@ const CounsellorDashboard = () => {
   const [click, setClick] = useState(false);
   const allAppointments = () => {
     setClick(!click);
+    setFilter(!filter);
     setComponent("appointments");
   };
   const [id, setId] = useState(null);
   function handleEdit(a_id) {
     setId((prev) => (prev = a_id));
   }
-
+  const [filter, setFilter] = useState(false);
+  function myAppoints() {
+    setFilter(!filter);
+  }
   function handleLogin(user) {
     setUser(user);
   }
@@ -42,6 +47,16 @@ const CounsellorDashboard = () => {
               <button
                 activeClassName="active"
                 className="cd-nav-links"
+                onClick={myAppoints}
+              >
+                My Appointments
+              </button>
+            </li>
+
+            <li className="cd-nav-item">
+              <button
+                activeClassName="active"
+                className="cd-nav-links"
                 onClick={allAppointments}
               >
                 Appointments
@@ -60,10 +75,13 @@ const CounsellorDashboard = () => {
           </ul>
         </div>
       </div>
-      {component === "appointments" ? (
+      
+      {filter? <MyAppointments user={user}/> :component === "appointments" ? (
         <CounsellorAppointments
           handleEdit={handleEdit}
           setComponent={setComponent}
+          filter={filter}
+          user={user}
         />
       ) : (
         <EditAppointment id={id} setComponent={setComponent} />

@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./CounsellorAppointments.css";
 
 import { useNavigate, useParams } from "react-router-dom";
-const CounsellorAppointments = ({ setComponent, handleEdit,}) => {
+const MyAppointments = ({user, setComponent, handleEdit }) => {
   const navigate = useNavigate();
   const params = useParams();
 
   const [app, setAppointments] = useState([]);
   const [approved, setApproved] = useState(false);
- 
+
   useEffect(() => {
     fetch("http://localhost:3000/appointments")
       .then((res) => res.json())
-      .then((data) => setAppointments(data));
+      .then((data) => setAppointments(data.filter((d)=>d.doctor.id ===user.id)));
   }, [approved]);
   const formData = {
     status: "Approved",
@@ -87,11 +87,7 @@ const CounsellorAppointments = ({ setComponent, handleEdit,}) => {
                       handleEdit(ap.id);
                       setComponent("edit");
                     }}
-                    className={
-                      ap.status === "Complete"
-                        ? "disabled"
-                        : "edit"
-                    }
+                    className={ap.status === "Complete" ? "disabled" : "edit"}
                   >
                     Start
                   </button>
@@ -105,4 +101,4 @@ const CounsellorAppointments = ({ setComponent, handleEdit,}) => {
   );
 };
 
-export default CounsellorAppointments;
+export default MyAppointments;

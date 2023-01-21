@@ -6,26 +6,28 @@
   align-items: center;
   z-index: 3;
   padding: 10px;
- box-shadow: rgb(0 0 0 / 50%) 0px 8px 24px;
-     border: 1px solid white;
+  box-shadow: rgb(0 0 0 / 50%) 0px 8px 24px;
+  border: 1px solid white;
 }
 .ca-container .cancel {
-  padding: 0 5px;
-  background-color: rgb(71, 236, 20);
-  color: white;
+  padding: 1 7px;
+  background-color: white;
+  color: blueviolet;
+  margin-left: 20px;
   border: 1px solid rgb(12, 230, 12);
 }
 .ca-container .edit {
-  padding: 0 5px;
-  background-color: rgb(87, 53, 238);
-  color: white;
+  padding: 1 10px;
+  width: 70px;
+  background-color: white;
+  color: blueviolet;
   margin-left: 20px;
   border: 1px solid rgb(12, 230, 12);
 }
 .ca-container .approve {
-  padding: 0 5px;
-  background-color: rgb(171, 158, 231);
-  color: white;
+  padding: 1 7px;
+  background-color: white;
+  color: blueviolet;
   margin-left: 20px;
   border: 1px solid rgb(12, 230, 12);
 }

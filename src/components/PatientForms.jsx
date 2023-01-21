@@ -23,7 +23,7 @@ const Forms = ({handleLogin}) => {
           {currentForm === "login" ? (
             <Login onLogin={handleLogin} onFormSwitch={toggleForm} />
           ) : (
-            <Signup onFormSwitch={toggleForm} />
+            <Signup onLogin={handleLogin} onFormSwitch={toggleForm} />
           )}
         </div>
       </div>

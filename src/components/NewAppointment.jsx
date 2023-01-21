@@ -1,7 +1,7 @@
 import React, { useState, useNavigate } from "react";
 import { Navigate } from "react-router-dom";
 import "./NewAppointment.css";
-const NewAppointment = ({ setComponent }) => {
+const NewAppointment = ({ setComponent,user }) => {
   const [formData, setformData] = useState({
     appointment_date: "",
     appointment_time: "",
@@ -9,7 +9,7 @@ const NewAppointment = ({ setComponent }) => {
     status: "Pending",
     prescription: "Unavailable",
     doctor_id: 1,
-    patient_id: 1,
+    patient_id: user.id,
   });
   console.log(formData);
 
@@ -23,7 +23,7 @@ const NewAppointment = ({ setComponent }) => {
       },
     }).then((r) => {
       if (r.ok) {
-        window.alert("User created successfully");
+        window.alert("Appointment created successfully");
         setComponent("appointments");
       } else {
         window.alert("Something went wrong");

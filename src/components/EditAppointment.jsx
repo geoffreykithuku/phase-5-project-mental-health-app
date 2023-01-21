@@ -12,8 +12,6 @@ const EditAppointment = ({ id, setComponent }) => {
       });
   }, []);
 
-
-
   function handleSubmit(e) {
     e.preventDefault();
     fetch(`http://localhost:3000/appointments/${id}/complete`, {
@@ -26,6 +24,7 @@ const EditAppointment = ({ id, setComponent }) => {
       if (r.ok) {
         window.alert("Appointment completed successfully");
         // navigate("/");
+        setComponent("appointments");
       } else {
         window.alert("Something went wrong");
         r.json().then((err) => console.log(err.errors));
@@ -45,7 +44,7 @@ const EditAppointment = ({ id, setComponent }) => {
   return (
     <div className="ea-container">
       <form className="ea-form" onSubmit={handleSubmit}>
-        <label htmlFor="date">Date</label>
+        {/* <label htmlFor="date">Date</label>
         <input
           className="ea-input"
           onChange={handleChange}
@@ -84,7 +83,7 @@ const EditAppointment = ({ id, setComponent }) => {
           placeholder="Status of appointment"
           id="status"
           value={formData.status}
-        />
+        /> */}
         <label htmlFor="notes">Prescription</label>
         <textarea
           className="ea-textarea"

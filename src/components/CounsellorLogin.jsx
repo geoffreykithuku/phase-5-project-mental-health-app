@@ -6,14 +6,13 @@ const ConsellorLogin = ({onLogin, onFormSwitch}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/clogin", {
+    fetch("http://localhost:3000/clogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
     }).then((r) => {
-
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {

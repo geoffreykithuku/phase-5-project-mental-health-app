@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navigate, NavLink, useNavigate, useParams } from "react-router-dom";
 import "./UserDashboard.css";
 import NewAppointment from "./NewAppointment";
@@ -15,6 +15,14 @@ const UserDashboard = () => {
     setClick(!click);
     setComponent("new");
   };
+    useEffect(() => {
+      // auto-login
+      fetch("http://localhost:3000/me").then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user));
+        }
+      });
+    }, []);
   const allAppointments = () => {
     setClick(!click);
     setComponent("appointments");

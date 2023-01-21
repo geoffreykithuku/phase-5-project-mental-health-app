@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./CounsellorAppointments.css";
 
 import { useNavigate, useParams } from "react-router-dom";
-const CounsellorAppointments = ({ setComponent, handleEdit}) => {
+const MyAppointments = ({user, setComponent, handleEdit }) => {
   const navigate = useNavigate();
   const params = useParams();
 
   const [app, setAppointments] = useState([]);
   const [approved, setApproved] = useState(false);
- 
+
   useEffect(() => {
     fetch("http://localhost:3000/appointments")
       .then((res) => res.json())
-      .then((data) => setAppointments(data));
+      .then((data) => setAppointments(data.filter((d)=>d.doctor.id ===user.id)));
   }, [approved]);
   const formData = {
-    user: "Approved",
+    status: "Approved",
   };
   const handleApprove = (a) => {
     fetch(`http://localhost:3000/appointments/${a.id}/approve`, {
@@ -50,21 +50,19 @@ const CounsellorAppointments = ({ setComponent, handleEdit}) => {
                   <i className="bx bx-tachometer"></i>
                 </div>
                 <h4 className="title">
-                  <a href="">Doctor: {ap.doctor.name}</a>
-                  <br />
                   <a href="">Patient: {ap.patient.name}</a>
                 </h4>
                 <p className="description">
                   <h5>Day: {ap.appointment_date}</h5>
                   <h5>Time: {ap.appointment_time}</h5>
-                  {/* <h5>Issue: {ap.issue}</h5> */}
+                  <h5>Issue: {ap.issue}</h5>
                   <h5>Status: {ap.status}</h5>
-                  {/* {ap.prescription ? (
+                  {ap.prescription ? (
                     <h5>Prescription: {ap.prescription}</h5>
                   ) : (
                     <h5>Prescription: Unavailable</h5>
-                  )} */}
-                  {/* <button
+                  )}
+                  <button
                     className={
                       ap.status === "Approved" || ap.status === "Complete"
                         ? "disabled"
@@ -89,14 +87,10 @@ const CounsellorAppointments = ({ setComponent, handleEdit}) => {
                       handleEdit(ap.id);
                       setComponent("edit");
                     }}
-                    className={
-                      ap.status === "Complete"
-                        ? "disabled"
-                        : "edit"
-                    }
+                    className={ap.status === "Complete" ? "disabled" : "edit"}
                   >
                     Start
-                  </button> */}
+                  </button>
                 </p>
               </div>
             </div>
@@ -107,4 +101,4 @@ const CounsellorAppointments = ({ setComponent, handleEdit}) => {
   );
 };
 
-export default CounsellorAppointments;
+export default MyAppointments;

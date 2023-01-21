@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Navigate, NavLink, useNavigate, useParams } from "react-router-dom";
 import CounsellorAppointments from "./CounsellorAppointments";
 import "./CounsellorDashboard.css";
 import EditAppointment from "./EditAppointment";
 import ConsellorForms from "./ConsellorForms";
+import MyAppointments from "./MyAppointments";
 const CounsellorDashboard = () => {
   const [component, setComponent] = useState("appointments");
   const [user, setUser] = useState(null);
@@ -17,7 +18,17 @@ const CounsellorDashboard = () => {
   function handleEdit(a_id) {
     setId((prev) => (prev = a_id));
   }
-
+  function myAppoints() {
+    setComponent("myappoints");
+  }
+  useEffect(() => {
+    // auto-login
+    fetch("http://localhost:3000/cme").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
   function handleLogin(user) {
     setUser(user);
   }
@@ -42,6 +53,16 @@ const CounsellorDashboard = () => {
               <button
                 activeClassName="active"
                 className="cd-nav-links"
+                onClick={myAppoints}
+              >
+                My Appointments
+              </button>
+            </li>
+
+            <li className="cd-nav-item">
+              <button
+                activeClassName="active"
+                className="cd-nav-links"
                 onClick={allAppointments}
               >
                 Appointments
@@ -60,13 +81,21 @@ const CounsellorDashboard = () => {
           </ul>
         </div>
       </div>
+
       {component === "appointments" ? (
         <CounsellorAppointments
           handleEdit={handleEdit}
           setComponent={setComponent}
+          user={user}
         />
-      ) : (
+      ) : component === "edit" ? (
         <EditAppointment id={id} setComponent={setComponent} />
+      ) : (
+        <MyAppointments
+          setComponent={setComponent}
+          user={user}
+          handleEdit={handleEdit}
+        />
       )}
     </div>
   );

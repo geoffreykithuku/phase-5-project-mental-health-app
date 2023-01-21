@@ -1,7 +1,7 @@
 import React, { useState, useNavigate } from "react";
 import { Navigate } from "react-router-dom";
 import "./NewAppointment.css";
-const NewAppointment = ({ setComponent,user }) => {
+const NewAppointment = ({ setComponent, user }) => {
   const [formData, setformData] = useState({
     appointment_date: "",
     appointment_time: "",

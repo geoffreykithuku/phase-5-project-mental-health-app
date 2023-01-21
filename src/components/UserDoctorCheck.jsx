@@ -3,12 +3,12 @@ import { Navigate, useNavigate } from "react-router-dom";
 import "./UserDoctorCheck.css";
 
 const UserDoctorCheck = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   function navUser() {
-    navigate("/patientforms");
+    navigate("/usersdashboard");
   }
   function navDoc() {
-    navigate("/docforms");
+    navigate("/counsellordashboard");
   }
 
   return (

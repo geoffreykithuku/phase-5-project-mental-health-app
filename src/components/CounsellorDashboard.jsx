@@ -3,6 +3,7 @@ import { Navigate, NavLink, useNavigate, useParams } from "react-router-dom";
 import CounsellorAppointments from "./CounsellorAppointments";
 import "./CounsellorDashboard.css";
 import EditAppointment from "./EditAppointment";
+import ConsellorForms from "./ConsellorForms";
 const CounsellorDashboard = () => {
   const [component, setComponent] = useState("appointments");
   const [user, setUser] = useState(null);
@@ -17,13 +18,14 @@ const CounsellorDashboard = () => {
     setId((prev) => (prev = a_id));
   }
 
-  // function handleLogin(user) {
-  //   setUser(user);
-  // }
+  function handleLogin(user) {
+    setUser(user);
+  }
   const handleLogout = () => setUser(null);
-  // if (!user) {
-  //   return <ConsellorForms handleLogin={handleLogin} />;
-  // }
+
+  if (!user) {
+    return <ConsellorForms handleLogin={handleLogin} />;
+  }
 
   return (
     <div className="cd-container-fluid">

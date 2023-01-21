@@ -18,10 +18,13 @@ const Signup = ({ onFormSwitch, onLogin }) => {
       headers: {
         "Content-Type": "application/json",
       },
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => onLogin(user));
+      } else {
+        r.json().then((err) => console.log(err.errors));
+      }
+    });
   }
   console.log(formData);
 

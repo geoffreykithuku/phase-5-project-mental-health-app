@@ -23,9 +23,10 @@ const UserDashboard = () => {
     setUser(user);
   }
   const handleLogout = () => setUser(null);
-  // if (!user) {
-  //   return <PatientForms  handleLogin={handleLogin}/>
-  // }
+  
+  if (!user) {
+    return <PatientForms  handleLogin={handleLogin}/>
+  }
   return (
     <div className="ud-container-fluid">
       <div className="row">

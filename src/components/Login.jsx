@@ -6,16 +6,15 @@ const Login = ({onLogin, onFormSwitch}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
     }).then((r) => {
-
       if (r.ok) {
-        r.json().then((user) =>onLogin(user));
+        r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => console.log(err.errors));
       }

@@ -23,9 +23,9 @@ const UserDashboard = () => {
     setUser(user);
   }
   const handleLogout = () => setUser(null);
-  
+
   if (!user) {
-    return <PatientForms  handleLogin={handleLogin}/>
+    return <PatientForms handleLogin={handleLogin} />;
   }
   return (
     <div className="ud-container-fluid">
@@ -63,7 +63,11 @@ const UserDashboard = () => {
           </ul>
         </div>
       </div>
-      {component === "new" ? <NewAppointment setComponent={setComponent} /> : <UserAppointments />}
+      {component === "new" ? (
+        <NewAppointment user={user} setComponent={setComponent} />
+      ) : (
+        <UserAppointments user={user} />
+      )}
     </div>
   );
 };

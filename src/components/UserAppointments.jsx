@@ -1,10 +1,12 @@
+import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { isStyledComponent } from "styled-components";
 import "./UserAppointment.css";
 
-const UserAppointments = () => {
+const UserAppointments = ({ user }) => {
   const [appointments, setAppointments] = useState([]);
+  const my_apps = appointments.filter((apt) => apt.patient.id === user.id);
   const navigate = useNavigate();
   const [deleted, setDeleted] = useState(false);
   useEffect(() => {
@@ -29,7 +31,7 @@ const UserAppointments = () => {
   return (
     <div className="up">
       <div className="row m-auto justify-center">
-        {appointments.map((ap) => {
+        {my_apps.map((ap) => {
           return (
             <div
               key={ap.id}
@@ -51,7 +53,11 @@ const UserAppointments = () => {
                   <h5>Status: {ap.status}</h5>
                   <button
                     onClick={() => handleCancel(ap.id)}
-                    className="cancel"
+                    className={
+                      ap.status === "Approved" || ap.status === "Complete"
+                        ? "disabled"
+                        : "cancel"
+                    }
                   >
                     Cancel
                   </button>

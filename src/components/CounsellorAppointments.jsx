@@ -62,8 +62,23 @@ const CounsellorAppointments = ({ setComponent, handleEdit }) => {
                   ) : (
                     <h5>Prescription: Unavailable</h5>
                   )}
-                  <button className="cancel">Reschedule</button>
-                  <button onClick={() => handleApprove(ap)} className="approve">
+                  <button
+                    className={
+                      ap.status === "Approved" || ap.status === "Complete"
+                        ? "disabled"
+                        : "cancel"
+                    }
+                  >
+                    Reschedule
+                  </button>
+                  <button
+                    className={
+                      ap.status === "Approved" || ap.status === "Complete"
+                        ? "disabled"
+                        : "approve"
+                    }
+                    onClick={() => handleApprove(ap)}
+                  >
                     Approve
                   </button>
 
@@ -72,7 +87,11 @@ const CounsellorAppointments = ({ setComponent, handleEdit }) => {
                       handleEdit(ap.id);
                       setComponent("edit");
                     }}
-                    className="edit"
+                    className={
+                      ap.status === "Complete"
+                        ? "disabled"
+                        : "edit"
+                    }
                   >
                     Start
                   </button>

@@ -21,7 +21,13 @@ const CounsellorDashboard = () => {
   function handleLogin(user) {
     setUser(user);
   }
-  const handleLogout = () => setUser(null);
+  const handleLogout = () => {
+    fetch("http://localhost:3000/clogout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  };
 
   if (!user) {
     return <ConsellorForms handleLogin={handleLogin} />;

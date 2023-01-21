@@ -15,6 +15,14 @@ const UserDashboard = () => {
     setClick(!click);
     setComponent("new");
   };
+    useEffect(() => {
+      // auto-login
+      fetch("http://localhost:3000/me").then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user));
+        }
+      });
+    }, []);
   const allAppointments = () => {
     setClick(!click);
     setComponent("appointments");

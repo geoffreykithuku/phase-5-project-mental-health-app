@@ -21,6 +21,14 @@ const CounsellorDashboard = () => {
   function myAppoints() {
     setComponent("myappoints");
   }
+  useEffect(() => {
+    // auto-login
+    fetch("http://localhost:3000/cme").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
   function handleLogin(user) {
     setUser(user);
   }
@@ -83,7 +91,11 @@ const CounsellorDashboard = () => {
       ) : component === "edit" ? (
         <EditAppointment id={id} setComponent={setComponent} />
       ) : (
-        <MyAppointments setComponent={setComponent} user={user} handleEdit={handleEdit} />
+        <MyAppointments
+          setComponent={setComponent}
+          user={user}
+          handleEdit={handleEdit}
+        />
       )}
     </div>
   );

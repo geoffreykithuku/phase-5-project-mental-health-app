@@ -68,8 +68,10 @@ function About() {
   const Content = styled.div`
     border: 0px solid black;
     background: #0890dd;
-    height: 50vh;
-    width: 30vw;
+    height: 32vh;
+    width: 25vw;
+    padding-bottom: 20px;
+    border-radius: 20px;
   `;
   const Heading = styled.h3`
     margin-top: 50px;

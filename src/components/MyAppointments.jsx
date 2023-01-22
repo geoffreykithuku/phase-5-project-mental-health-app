@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CounsellorAppointments.css";
 
 import { useNavigate, useParams } from "react-router-dom";
-const MyAppointments = ({user, setComponent, handleEdit }) => {
+const MyAppointments = ({ user, setComponent, handleEdit }) => {
   const navigate = useNavigate();
   const params = useParams();
 
@@ -67,7 +67,7 @@ const MyAppointments = ({user, setComponent, handleEdit }) => {
                   ) : (
                     <h5>Prescription: Unavailable</h5>
                   )}
-                  <button
+                  {/* <button
                     className={
                       ap.status === "Approved" || ap.status === "Complete"
                         ? "disabled"
@@ -75,7 +75,7 @@ const MyAppointments = ({user, setComponent, handleEdit }) => {
                     }
                   >
                     Reschedule
-                  </button>
+                  </button> */}
                   <button
                     className={
                       ap.status === "Approved" || ap.status === "Complete"

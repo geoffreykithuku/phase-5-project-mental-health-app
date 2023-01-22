@@ -107,16 +107,18 @@ function About() {
     color: #161312;
   `;
   const Button1 = styled.button`
-    margin-left: 120px;
+   
+    background-color: #079039;
+   
+     margin-left: 120px;
     height: 40px;
     width: 250px;
     margin-top: 20px;
-    border: 0;
-    background-color: #079039;
+    
     color: #fff;
-    line-height: 1.8em;
+    line-height: 1.79em;
     border-radius: 5px;
-    font-size:25px;
+    font-size; 20px;
     `;
   const navigate = useNavigate();
 

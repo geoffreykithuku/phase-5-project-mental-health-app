@@ -6,7 +6,7 @@ const ConsellorLogin = ({onLogin, onFormSwitch}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/clogin", {
+    fetch("https://mental-health-e5nb.onrender.com/clogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

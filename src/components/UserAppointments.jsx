@@ -10,13 +10,13 @@ const UserAppointments = ({ user }) => {
   const navigate = useNavigate();
   const [deleted, setDeleted] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:3000/appointments")
+    fetch("https://mental-health-e5nb.onrender.com/appointments")
       .then((res) => res.json())
       .then((data) => setAppointments(data));
   }, [deleted]);
 
   const handleCancel = (id) => {
-    fetch(`http://localhost:3000/appointments/${id}`, {
+    fetch(`https://mental-health-e5nb.onrender.com/appointments/${id}`, {
       method: "DELETE",
     }).then((response) => {
       if (response.ok) {

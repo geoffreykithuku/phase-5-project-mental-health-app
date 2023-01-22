@@ -5,7 +5,7 @@ const EditAppointment = ({ id, setComponent }) => {
   const [formData, setformData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/appointments/${id}`)
+    fetch(`https://mental-health-e5nb.onrender.com/appointments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setformData(data);
@@ -14,13 +14,16 @@ const EditAppointment = ({ id, setComponent }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`http://localhost:3000/appointments/${id}/complete`, {
-      method: "PATCH",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((r) => {
+    fetch(
+      `https://mental-health-e5nb.onrender.com/appointments/${id}/complete`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((r) => {
       if (r.ok) {
         window.alert("Appointment completed successfully");
         // navigate("/");

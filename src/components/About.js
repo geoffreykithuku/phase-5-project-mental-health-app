@@ -12,6 +12,7 @@ function About() {
     top: 20px;
     height: 60vh;
     width: 40vw;
+    border-radius:20px
   `;
   const Wrapper = styled.div`
     display: flex;
@@ -80,8 +81,8 @@ function About() {
   `;
   const Text = styled.div`
     margin-left: 30px;
-    font-size: 20px;
-    line-height: 1.87em;
+    font-size: 18px;
+    line-height: 1.7em;
     color: #fff;
   `;
   const Section2 = styled.div`

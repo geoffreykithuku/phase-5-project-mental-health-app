@@ -6,13 +6,11 @@ import Footer from "./footer";
 function About() {
   const About = styled.div`
     border: 0px solid black;
-    background: #dfe8e8;
+    background: #dfe9e9;
     position: relative;
     left: 40px;
     top: 20px;
-    height: 60vh;
-    padding: 20px;
-    border-radius: 20px;
+    height: 70vh;
     width: 40vw;
   `;
   const Wrapper = styled.div`
@@ -40,13 +38,12 @@ function About() {
     width: 250px;
     margin-top: 20px;
     border: 0;
-    background-color: #0890dd;
+    background-color: #0890DD;
     color: #fff;
     line-height: 1.79em;
     border-radius: 5px;
-    font-size: 20px;
-    padding: 0px 8px;
-  `;
+    font-size; 20px;
+    `;
   const Vision = styled.h1`
     text-align: center;
     font-size: 40px;
@@ -70,11 +67,9 @@ function About() {
   `;
   const Content = styled.div`
     border: 0px solid black;
-    background: #0780dd;
-    height: 32vh;
-    width: 25vw;
-    padding-bottom: 20px;
-    border-radius: 20px;
+    background: #0890dd;
+    height: 50vh;
+    width: 30vw;
   `;
   const Heading = styled.h3`
     margin-top: 50px;

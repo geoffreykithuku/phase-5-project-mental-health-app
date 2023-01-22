@@ -10,7 +10,7 @@ function About() {
     position: relative;
     left: 40px;
     top: 20px;
-    height: 70vh;
+    height: 60vh;
     width: 40vw;
   `;
   const Wrapper = styled.div`
@@ -70,6 +70,7 @@ function About() {
     background: #0890dd;
     height: 50vh;
     width: 30vw;
+    border-radius: 20px;
   `;
   const Heading = styled.h3`
     margin-top: 50px;
@@ -115,7 +116,7 @@ function About() {
     color: #fff;
     line-height: 1.8em;
     border-radius: 5px;
-    font-size; 25px;
+    font-size:25px;
     `;
   const navigate = useNavigate();
 
@@ -127,12 +128,6 @@ function About() {
       <Wrapper>
         <About>
           <Title>About Us</Title>
-          <Description>
-            We are a leading Counselling clinic based in Nairobi,Kenya<br></br>
-            That seeks to provide access to quality and inclusive<br></br>
-            counselling services to patients with mental health issues.<br></br>
-            We also create support groups and a community for patients
-          </Description>
           <Description>
             We are a leading Counselling clinic based in Nairobi,Kenya<br></br>
             That seeks to provide access to quality and inclusive<br></br>

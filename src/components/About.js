@@ -6,11 +6,13 @@ import Footer from "./footer";
 function About() {
   const About = styled.div`
     border: 0px solid black;
-    background: #dfe9e9;
+    background: #dfe8e8;
     position: relative;
     left: 40px;
     top: 20px;
-    height: 70vh;
+    height: 60vh;
+    padding: 20px;
+    border-radius: 20px;
     width: 40vw;
   `;
   const Wrapper = styled.div`
@@ -38,12 +40,13 @@ function About() {
     width: 250px;
     margin-top: 20px;
     border: 0;
-    background-color: #0890DD;
+    background-color: #0890dd;
     color: #fff;
     line-height: 1.79em;
     border-radius: 5px;
-    font-size; 20px;
-    `;
+    font-size: 20px;
+    padding: 0px 8px;
+  `;
   const Vision = styled.h1`
     text-align: center;
     font-size: 40px;
@@ -67,7 +70,7 @@ function About() {
   `;
   const Content = styled.div`
     border: 0px solid black;
-    background: #0890dd;
+    background: #0780dd;
     height: 32vh;
     width: 25vw;
     padding-bottom: 20px;
@@ -145,6 +148,7 @@ function About() {
         </About>
         <div>
           <img
+            style={{ height: "60vh", marginTop: "22px", borderRadius: "20px" }}
             src="https://img.freepik.com/premium-photo/gratitude-help-unrecognizable-couple-family-psychologist-shaking-hands-after-successful-therapy-reconciliation-office_568137-847.jpg?w=740"
             alt="About us"
           ></img>
@@ -184,6 +188,7 @@ function About() {
       <Section2>
         <div>
           <img
+            style={{ height: "60vh", marginTop: "22px", borderRadius: "20px" }}
             src="https://static.wixstatic.com/media/a2efb6_28b16c9b115848299737e33c77bae25b~mv2.jpg/v1/fill/w_640,h_540,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_auto/a2efb6_28b16c9b115848299737e33c77bae25b~mv2.jpg"
             alt="our services"
           ></img>

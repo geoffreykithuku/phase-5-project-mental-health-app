@@ -28,7 +28,7 @@ If you want to contribute go a head and fork and clone
 
 
 ## LIVE LINK
-    to be added
+    https://phase-5-project-mental-health-app-frontend.vercel.app/
 ## DEMO
 To be added
 ## License

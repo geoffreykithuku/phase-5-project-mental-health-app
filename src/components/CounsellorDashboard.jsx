@@ -23,7 +23,7 @@ const CounsellorDashboard = () => {
   }
   useEffect(() => {
     // auto-login
-    fetch("http://localhost:3000/cme").then((r) => {
+    fetch("https://mental-health-e5nb.onrender.com/cme").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
@@ -33,7 +33,9 @@ const CounsellorDashboard = () => {
     setUser(user);
   }
   const handleLogout = () => {
-    fetch("http://localhost:3000/clogout", { method: "DELETE" }).then((r) => {
+    fetch("https://mental-health-e5nb.onrender.com/clogout", {
+      method: "DELETE",
+    }).then((r) => {
       if (r.ok) {
         setUser(null);
       }

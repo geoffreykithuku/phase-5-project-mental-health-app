@@ -15,7 +15,7 @@ const NewAppointment = ({ setComponent, user }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/newappointment", {
+    fetch("https://mental-health-e5nb.onrender.com/newappointment", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {

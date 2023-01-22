@@ -17,7 +17,7 @@ const UserDashboard = () => {
   };
     useEffect(() => {
       // auto-login
-      fetch("http://localhost:3000/me").then((r) => {
+      fetch("https://mental-health-e5nb.onrender.com/me").then((r) => {
         if (r.ok) {
           r.json().then((user) => setUser(user));
         }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CounsellorAppointments.css";
 
 import { useNavigate, useParams } from "react-router-dom";
-const MyAppointments = ({user, setComponent, handleEdit }) => {
+const MyAppointments = ({ user, setComponent, handleEdit }) => {
   const navigate = useNavigate();
   const params = useParams();
 
@@ -10,21 +10,26 @@ const MyAppointments = ({user, setComponent, handleEdit }) => {
   const [approved, setApproved] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3000/appointments")
+    fetch("https://mental-health-e5nb.onrender.com/appointments")
       .then((res) => res.json())
-      .then((data) => setAppointments(data.filter((d)=>d.doctor.id ===user.id)));
+      .then((data) =>
+        setAppointments(data.filter((d) => d.doctor.id === user.id))
+      );
   }, [approved]);
   const formData = {
     status: "Approved",
   };
   const handleApprove = (a) => {
-    fetch(`http://localhost:3000/appointments/${a.id}/approve`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    }).then((res) => {
+    fetch(
+      `https://mental-health-e5nb.onrender.com/appointments/${a.id}/approve`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    ).then((res) => {
       if (res.ok) {
         alert("Approval successful");
         setApproved(!approved);
@@ -62,7 +67,7 @@ const MyAppointments = ({user, setComponent, handleEdit }) => {
                   ) : (
                     <h5>Prescription: Unavailable</h5>
                   )}
-                  <button
+                  {/* <button
                     className={
                       ap.status === "Approved" || ap.status === "Complete"
                         ? "disabled"
@@ -70,7 +75,7 @@ const MyAppointments = ({user, setComponent, handleEdit }) => {
                     }
                   >
                     Reschedule
-                  </button>
+                  </button> */}
                   <button
                     className={
                       ap.status === "Approved" || ap.status === "Complete"

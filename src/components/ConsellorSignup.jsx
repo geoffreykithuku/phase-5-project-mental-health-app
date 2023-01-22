@@ -13,7 +13,7 @@ const ConsellorSignup = ({ onLogin, onFormSwitch }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/csignup", {
+    fetch("https://mental-health-e5nb.onrender.com/csignup", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {

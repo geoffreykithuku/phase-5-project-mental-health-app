@@ -6,7 +6,7 @@ const Login = ({onLogin, onFormSwitch}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/login", {
+    fetch("https://mental-health-e5nb.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

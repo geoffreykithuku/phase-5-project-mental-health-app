@@ -12,7 +12,7 @@ const Signup = ({ onFormSwitch, onLogin }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/signup", {
+    fetch("https://mental-health-e5nb.onrender.com/signup", {
       method: "POST",
       body: JSON.stringify(formData),
       headers: {

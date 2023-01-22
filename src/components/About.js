@@ -69,13 +69,13 @@ function About() {
   const Content = styled.div`
     border: 0px solid black;
     background: #0890dd;
-    height: 50vh;
+    height: 40vh;
     width: 30vw;
     border-radius: 20px;
   `;
   const Heading = styled.h3`
     margin-top: 50px;
-    font-size: 25px;
+    font-size: 30px;
     margin-left: 30px;
     color: #fff;
   `;
